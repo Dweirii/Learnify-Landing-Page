@@ -75,8 +75,6 @@ export default function Hero({
             animate="visible"
             className="text-center lg:text-left"
           >
-        
-
             {/* Tagline */}
             <motion.h2
               variants={itemVariants}
@@ -155,50 +153,30 @@ export default function Hero({
               {/* Main mockup card */}
               <div className="relative bg-gradient-to-br from-[#102D26]/80 to-[#061A15]/80 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-[#ABAEB6]/10">
                 <div className="aspect-video bg-gradient-to-br from-[#0BA94C]/20 to-[#102D26]/40 rounded-xl mb-4 flex items-center justify-center relative overflow-hidden">
-                  {images?.main ? (
                     <Image
-                      src={images.main || "/placeholder.svg"}
-                      alt="Live learning session interface"
-                      fill
-                      className="object-cover rounded-xl"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
-                  ) : (
-                    <Image
-                      src="/placeholder-yv5p2.png"
+                      src="/hero-live.jpg"
                       alt="Live learning session interface"
                       width={500}
                       height={300}
                       className="rounded-xl"
                       sizes="(max-width: 768px) 100vw, 50vw"
                     />
-                  )}
                   <div className="absolute top-4 left-4 bg-red-500 text-white text-xs px-2 py-1 rounded-full flex items-center gap-1">
                     <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
                     LIVE
                   </div>
                 </div>
                 <div className="flex items-center justify-between text-sm">
-                  <span className="text-white font-medium">Advanced React Patterns</span>
+                  <span className="text-white font-medium hidden lg:block">Advanced React Patterns</span>
                   <span className="text-[#ABAEB6]">127 watching</span>
                 </div>
               </div>
 
               {/* Project badge card */}
-              <div className="absolute -bottom-4 -left-4 bg-gradient-to-br from-[#102D26]/90 to-[#061A15]/90 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-[#ABAEB6]/10 max-w-[200px]">
-                {images?.card1 ? (
-                  <Image
-                    src={images.card1 || "/placeholder.svg"}
-                    alt="Project completion badge"
-                    width={160}
-                    height={120}
-                    className="rounded-lg mb-2"
-                    sizes="200px"
-                  />
-                ) : (
+              <div className="absolute -bottom-4 -left-4 bg-gradient-to-br from-[#102D26]/90 to-[#061A15]/90 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-[#ABAEB6]/10 max-w-[200px] hidden lg:block">       
                   <div className="aspect-[4/3] bg-gradient-to-br from-[#0BA94C]/30 to-[#102D26]/40 rounded-lg mb-2 flex items-center justify-center">
                     <Image
-                      src="/placeholder-kq4dk.png"
+                      src="/hero-project.jpeg"
                       alt="Project completion badge"
                       width={160}
                       height={120}
@@ -206,26 +184,15 @@ export default function Hero({
                       sizes="200px"
                     />
                   </div>
-                )}
                 <p className="text-xs text-white font-medium">Project Complete!</p>
                 <p className="text-xs text-[#ABAEB6]">+250 XP earned</p>
               </div>
 
               {/* XP/Gamification card */}
-              <div className="absolute -top-4 -right-4 bg-gradient-to-br from-[#102D26]/90 to-[#061A15]/90 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-[#ABAEB6]/10 max-w-[180px]">
-                {images?.card2 ? (
-                  <Image
-                    src={images.card2 || "/placeholder.svg"}
-                    alt="XP and level progress"
-                    width={140}
-                    height={100}
-                    className="rounded-lg mb-2"
-                    sizes="180px"
-                  />
-                ) : (
+              <div className="absolute -top-4 -right-4 bg-gradient-to-br from-[#102D26]/90 to-[#061A15]/90 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-[#ABAEB6]/10 max-w-[180px] hidden lg:block">   
                   <div className="aspect-[7/5] bg-gradient-to-br from-[#0BA94C]/30 to-[#102D26]/40 rounded-lg mb-2 flex flex-col items-center justify-center p-2">
                     <Image
-                      src="/placeholder-qdfe7.png"
+                      src="/hero-level.jpeg"
                       alt="XP and level progress"
                       width={140}
                       height={100}
@@ -233,7 +200,6 @@ export default function Hero({
                       sizes="180px"
                     />
                   </div>
-                )}
                 <div className="flex items-center justify-between text-xs">
                   <span className="text-white font-medium">Level 12</span>
                   <span className="text-[#0BA94C]">2,450 XP</span>
