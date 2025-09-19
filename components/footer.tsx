@@ -52,15 +52,6 @@ export default function Footer() {
           <div className="flex items-center gap-3">
             <div className="flex gap-2">
               <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noreferrer noopener"
-                aria-label="Follow us on Twitter"
-                className="text-white/60 hover:text-[#0BA94C] transition-colors p-2 focus:outline-none focus:ring-2 focus:ring-[#0BA94C] focus:ring-offset-2 focus:ring-offset-[#061A15] rounded"
-              >
-                <Twitter className="w-5 h-5" />
-              </a>
-              <a
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noreferrer noopener"
