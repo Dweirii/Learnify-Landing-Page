@@ -52,7 +52,7 @@ export default function Footer() {
           <div className="flex items-center gap-3">
             <div className="flex gap-2">
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/learnify-livestream/"
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label="Follow us on LinkedIn"
@@ -61,7 +61,7 @@ export default function Footer() {
                 <Linkedin className="w-5 h-5" />
               </a>
               <a
-                href="https://youtube.com"
+                href="https://youtube.com/@learnifyjo?"
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label="Subscribe to our YouTube channel"
@@ -70,7 +70,7 @@ export default function Footer() {
                 <Youtube className="w-5 h-5" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://instagram.com/learnifyjo.com"
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label="Follow us on Instagram"
