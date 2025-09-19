@@ -167,7 +167,7 @@ export default function Hero({
                   </div>
                 </div>
                 <div className="flex items-center justify-between text-sm">
-                  <span className="text-white font-medium hidden lg:block">Advanced React Patterns</span>
+                  <span className="text-white font-medium hidden sm:block">Live Violin Lesson – Interactive Music Streaming Session</span>
                   <span className="text-[#ABAEB6]">127 watching</span>
                 </div>
               </div>
