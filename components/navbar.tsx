@@ -14,8 +14,8 @@ const Logo = ({ className }: { className?: string }) => (
     <Image
       src="/logo.png"
       alt="Learnify"
-      width={150}   // directly control logo size
-      height={150}
+      width={130}   // directly control logo size
+      height={130}
       className="object-contain pt-2"
     />
   </div>
