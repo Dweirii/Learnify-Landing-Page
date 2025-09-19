@@ -7,22 +7,19 @@ import { Menu, X } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet"
 import { cn } from "@/lib/utils"
+import Image from "next/image"
 
-// Logo component with geometric L + play/stream hint
 const Logo = ({ className }: { className?: string }) => (
   <div className={cn("flex items-center gap-2", className)}>
-    <div className="relative w-8 h-8">
-      <svg viewBox="0 0 32 32" className="w-full h-full" fill="none" xmlns="http://www.w3.org/2000/svg">
-        {/* Geometric L shape */}
-        <path d="M6 6v16h4V10h12V6H6z" fill="#0BA94C" className="transition-colors duration-200" />
-        {/* Play/stream triangle hint */}
-        <path d="M20 14l6 4-6 4v-8z" fill="#0BA94C" className="transition-colors duration-200" />
-      </svg>
-    </div>
-    <span className="text-xl font-bold text-white">Learnify</span>
+    <Image
+      src="/logo.png"
+      alt="Learnify"
+      width={150}   // directly control logo size
+      height={150}
+      className="object-contain pt-2"
+    />
   </div>
 )
-
 export type NavItem = {
   label: string
   href: string

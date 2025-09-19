@@ -16,19 +16,6 @@ interface HeroProps {
   className?: string
 }
 
-const LearnifyLogo = () => (
-  <svg
-    width="32"
-    height="32"
-    viewBox="0 0 32 32"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-    className="text-[#0BA94C]"
-  >
-    <path d="M8 6L8 26L24 16L8 6Z" fill="currentColor" className="opacity-90" />
-    <path d="M6 4L6 28L2 28L2 4L6 4Z" fill="currentColor" />
-  </svg>
-)
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
@@ -88,16 +75,7 @@ export default function Hero({
             animate="visible"
             className="text-center lg:text-left"
           >
-            {/* Logo and Brand */}
-            <motion.div
-              variants={itemVariants}
-              className="flex items-center justify-center lg:justify-start gap-3 mb-6"
-            >
-              <LearnifyLogo />
-              <h1 id="hero-heading" className="text-3xl lg:text-4xl font-bold text-white">
-                Learnify
-              </h1>
-            </motion.div>
+        
 
             {/* Tagline */}
             <motion.h2
