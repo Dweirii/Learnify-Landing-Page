@@ -164,7 +164,7 @@ export default function FeaturesPage() {
             Join thousands of learners already growing their skills and building their future on Learnify.
           </p>
           <a
-            href="/join"
+            href="/#join"
             className="inline-block bg-[#0BA94C] text-white font-semibold rounded-xl px-6 py-3 md:px-6 md:py-4 text-base md:text-lg hover:brightness-110 hover:scale-105 transition-all duration-200"
           >
             Start Learning Today
