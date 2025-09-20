@@ -89,7 +89,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Legal */}
+        {/* Legal 
         <div className="border-t border-white/10 mt-8 pt-6">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm text-white/60">
             <span>© {currentYear} Learnify</span>
@@ -115,6 +115,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
+        */}
       </div>
     </footer>
   )
