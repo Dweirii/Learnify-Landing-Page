@@ -35,7 +35,7 @@ const defaultAchievements: Achievement[] = [
     title: "User Growth Milestone",
     description: "Acquired over 500 users in a single day upon launch.",
     icon: Users,
-    image: "/user-growth.jpg",
+    image: "/user-grouth.jpg",
   },
 ]
 

@@ -1,29 +1,80 @@
 import { type NextRequest, NextResponse } from "next/server"
-import { z } from "zod"
-
-const joinSchema = z.object({
-  name: z.string().min(2, "Name must be at least 2 characters"),
-  email: z.string().email("Please enter a valid email address"),
-})
+import { prisma } from "@/lib/db"
+import { newsletterSchema } from "@/lib/validations"
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json()
-    const { name, email } = joinSchema.parse(body)
+    const validatedData = newsletterSchema.parse(body)
 
-    // Here you would typically save to database or send to email service
-    // For now, we'll just simulate a successful response
-    console.log("New join request:", { name, email })
+    // Check if email already exists
+    const existingSubscription = await prisma.newsletterSubscription.findUnique({
+      where: {
+        email: validatedData.email
+      }
+    })
 
-    // Simulate processing time
-    await new Promise((resolve) => setTimeout(resolve, 1000))
+    if (existingSubscription) {
+      if (existingSubscription.isActive) {
+        return NextResponse.json(
+          {
+            success: false,
+            error: 'Email is already subscribed'
+          },
+          { status: 400 }
+        )
+      } else {
+        // Reactivate subscription
+        const subscription = await prisma.newsletterSubscription.update({
+          where: {
+            email: validatedData.email
+          },
+          data: {
+            isActive: true,
+            source: validatedData.source || 'Home Page CTA'
+          }
+        })
 
-    return NextResponse.json({ message: "Successfully joined!", data: { name, email } }, { status: 200 })
-  } catch (error) {
-    if (error instanceof z.ZodError) {
-      return NextResponse.json({ error: "Invalid data", details: error.errors }, { status: 400 })
+        return NextResponse.json({
+          success: true,
+          data: subscription,
+          message: 'Welcome back to Learnify!'
+        })
+      }
     }
 
-    return NextResponse.json({ error: "Internal server error" }, { status: 500 })
+    const subscription = await prisma.newsletterSubscription.create({
+      data: {
+        ...validatedData,
+        source: validatedData.source || 'Home Page CTA'
+      }
+    })
+
+    return NextResponse.json({
+      success: true,
+      data: subscription,
+      message: 'Successfully joined Learnify!'
+    }, { status: 201 })
+  } catch (error) {
+    console.error('Error creating subscription:', error)
+    
+    if (error instanceof Error && error.name === 'ZodError') {
+      return NextResponse.json(
+        {
+          success: false,
+          error: 'Validation failed',
+          details: error.message
+        },
+        { status: 400 }
+      )
+    }
+
+    return NextResponse.json(
+      {
+        success: false,
+        error: 'Failed to join Learnify'
+      },
+      { status: 500 }
+    )
   }
 }

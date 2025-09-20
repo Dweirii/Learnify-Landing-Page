@@ -67,19 +67,27 @@ export default function CtaJoin({
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          email: formData.email,
+          source: "Home Page CTA"
+        }),
       })
+
+      const result = await response.json()
 
       if (!response.ok) {
-        throw new Error("Failed to join. Please try again.")
+        throw new Error(result.error || "Failed to join. Please try again.")
       }
 
-      toast({
-        title: "Welcome to Learnify!",
-        description: "You've successfully joined our community.",
-      })
-
-      setFormData({ name: "", email: "" })
+      if (result.success) {
+        toast({
+          title: "Welcome to Learnify!",
+          description: result.message || "You've successfully joined our community.",
+        })
+        setFormData({ name: "", email: "" })
+      } else {
+        throw new Error(result.error || "Failed to join. Please try again.")
+      }
     } catch (error) {
       const errorMessage = error instanceof Error ? error.message : "Something went wrong. Please try again."
       setSubmitError(errorMessage)

@@ -1,0 +1,118 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Job {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  requirements String[]
+  location    String?
+  type        JobType
+  status      JobStatus @default(ACTIVE)
+  salaryMin   Int?
+  salaryMax   Int?
+  currency    String   @default("USD")
+  experience  String?
+  department  String?
+  isRemote    Boolean  @default(false)
+  benefits    String[]
+  skills      String[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  applications JobApplication[]
+
+  @@map("jobs")
+}
+
+model JobApplication {
+  id          String   @id @default(cuid())
+  jobId       String
+  firstName   String
+  lastName    String
+  email       String
+  phone       String?
+  resume      String? // URL to uploaded resume
+  coverLetter String?
+  experience  String?
+  portfolio   String?
+  linkedin    String?
+  github      String?
+  website     String?
+  status      ApplicationStatus @default(PENDING)
+  notes       String? // Internal notes for admin
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  job Job @relation(fields: [jobId], references: [id], onDelete: Cascade)
+
+  @@map("job_applications")
+}
+
+model ContactSubmission {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  subject   String
+  message   String
+  company   String?
+  phone     String?
+  status    ContactStatus @default(NEW)
+  notes     String? // Internal notes
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("contact_submissions")
+}
+
+model NewsletterSubscription {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  isActive  Boolean  @default(true)
+  source    String? // Where they subscribed from
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("newsletter_subscriptions")
+}
+
+enum JobType {
+  FULL_TIME
+  PART_TIME
+  CONTRACT
+  INTERNSHIP
+  FREELANCE
+}
+
+enum JobStatus {
+  ACTIVE
+  INACTIVE
+  CLOSED
+  DRAFT
+}
+
+enum ApplicationStatus {
+  PENDING
+  REVIEWED
+  SHORTLISTED
+  INTERVIEWED
+  ACCEPTED
+  REJECTED
+  WITHDRAWN
+}
+
+enum ContactStatus {
+  NEW
+  IN_PROGRESS
+  RESOLVED
+  CLOSED
+}

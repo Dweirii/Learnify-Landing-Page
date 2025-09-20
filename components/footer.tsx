@@ -1,5 +1,6 @@
 import { Twitter, Linkedin, Youtube, Instagram } from "lucide-react"
 import Image from "next/image"
+import NewsletterSubscription from "./newsletter-subscription"
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -89,33 +90,25 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Legal 
+        {/* Legal */}
         <div className="border-t border-white/10 mt-8 pt-6">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm text-white/60">
-            <span>© {currentYear} Learnify</span>
-            <div className="flex gap-6">
+            <span>© {currentYear} Learnify. All rights reserved.</span>
+            
+            <span className="text-white/60">
+              Built with <span className="text-[#0BA94C]">passion</span> by{" "}
               <a
-                href="/terms"
-                className="hover:text-[#0BA94C] transition-colors focus:outline-none focus:ring-2 focus:ring-[#0BA94C] focus:ring-offset-2 focus:ring-offset-[#061A15] rounded"
+                href="https://github.com/Dweirii"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-[#0BA94C] transition-colors font-medium"
               >
-                Terms
+                Zaid Dweiri
               </a>
-              <a
-                href="/privacy"
-                className="hover:text-[#0BA94C] transition-colors focus:outline-none focus:ring-2 focus:ring-[#0BA94C] focus:ring-offset-2 focus:ring-offset-[#061A15] rounded"
-              >
-                Privacy
-              </a>
-              <a
-                href="/cookies"
-                className="hover:text-[#0BA94C] transition-colors focus:outline-none focus:ring-2 focus:ring-[#0BA94C] focus:ring-offset-2 focus:ring-offset-[#061A15] rounded"
-              >
-                Cookies
-              </a>
-            </div>
+            </span>
           </div>
         </div>
-        */}
+
       </div>
     </footer>
   )
