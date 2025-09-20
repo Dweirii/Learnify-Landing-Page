@@ -110,7 +110,7 @@ export default function CtaJoin({
   const isFormValid = formData.name.length >= 2 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)
 
   return (
-    <section className={cn("bg-transparent", className)}>
+    <section className={cn("bg-transparent", className)} id="join">
       <div className="max-w-screen-md mx-auto px-4 sm:px-6 py-16">
         <div className="text-center mb-8">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Start Your <span className="text-[#0BA94C]">Learnify</span> Journey Today</h2>

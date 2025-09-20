@@ -1,9 +1,10 @@
 "use client"
 
 import type React from "react"
+import { useState } from "react"
 
 import { motion, Variants } from "framer-motion"
-import { Users, TrendingUp, Share2, Compass, Network, GraduationCap } from "lucide-react"
+import { Users, TrendingUp, Share2, Compass, Network, GraduationCap, ChevronDown, ChevronUp } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 interface AudienceSegment {
@@ -64,6 +65,18 @@ export default function TargetAudience({
   ctaText = "Ready to be one of us?",
   onCtaClick,
 }: TargetAudienceProps) {
+  const [showAll, setShowAll] = useState(false)
+  const initialSegmentsCount = 3
+  const visibleSegments = showAll ? audienceSegments : audienceSegments.slice(0, initialSegmentsCount)
+  
+  // Debug logging
+  console.log('Target Audience Debug:', {
+    showAll,
+    totalSegments: audienceSegments.length,
+    visibleCount: visibleSegments.length,
+    visibleTitles: visibleSegments.map(s => s.title)
+  })
+
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -112,20 +125,16 @@ export default function TargetAudience({
           </motion.p>
         </motion.div>
 
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={containerVariants}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12"
-        >
-          {audienceSegments.map((segment, index) => {
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          {visibleSegments.map((segment, index) => {
             const IconComponent = segment.icon
             return (
               <motion.div
                 key={segment.title}
-                variants={itemVariants}
-                className="group bg-[#102D26]/40 backdrop-blur-sm border border-[#0BA94C]/20 rounded-xl p-6 hover:border-[#0BA94C]/40 transition-all duration-300 hover:bg-[#102D26]/60"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                className="group bg-[#102D26]/40 backdrop-blur-sm border border-[#0BA94C]/20 rounded-xl p-6 hover:border-[#0BA94C]/40 transition-all duration-300 hover:bg-[#102D26]/60 min-h-[120px]"
               >
                 <div className="flex items-start gap-4">
                   <div className="flex-shrink-0 w-12 h-12 bg-[#0BA94C]/10 rounded-lg flex items-center justify-center group-hover:bg-[#0BA94C]/20 transition-colors duration-300">
@@ -141,7 +150,31 @@ export default function TargetAudience({
               </motion.div>
             )
           })}
-        </motion.div>
+        </div>
+
+        {/* See More/Less Button */}
+        {audienceSegments.length > initialSegmentsCount && (
+          <div className="text-center mt-8">
+            <Button
+              onClick={() => setShowAll(!showAll)}
+              variant="outline"
+              className="border-[#0BA94C]/50 text-[#0BA94C] hover:bg-[#0BA94C]/10 hover:border-[#0BA94C] transition-all duration-300 bg-transparent px-6 py-2"
+              aria-label={showAll ? "Show fewer audience segments" : "Show all audience segments"}
+            >
+              {showAll ? (
+                <>
+                  Show Less
+                  <ChevronUp className="w-4 h-4 ml-2" />
+                </>
+              ) : (
+                <>
+                  See More Audiences
+                  <ChevronDown className="w-4 h-4 ml-2" />
+                </>
+              )}
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   )

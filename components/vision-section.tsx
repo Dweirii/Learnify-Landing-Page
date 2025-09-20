@@ -31,7 +31,7 @@ export default function VisionSection({
   beliefs = defaultBeliefs,
   closing = "Join the movement now!",
   ctaLabel = "Get Started",
-  ctaHref = "/join",
+  ctaHref = "#join",
   image,
   className = "",
 }: VisionSectionProps) {

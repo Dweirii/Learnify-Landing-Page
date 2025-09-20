@@ -130,7 +130,7 @@ const FlowStep = ({
 
 export const CommunityNode = () => {
   return (
-    <div className="flex flex-row gap-4 items-center bg-[#0BA94C] rounded-md w-40 h-12 justify-center text-center">
+    <div className="flex flex-row gap-4 items-center justify-center bg-[#0BA94C] rounded-md w-40 h-12  text-center">
       <Users className="size-6 text-white" />
       <p className="text-white font-semibold text-sm">Community</p>
     </div>
@@ -169,7 +169,7 @@ export default function HowItWorksDiagram({
         </div>
 
         {/* Mobile Layout - Vertical Stacked */}
-        <div className="md:hidden space-y-12">
+        <div className="md:hidden flex flex-col items-center justify-center space-y-12">
           {/* Streamers Flow */}
           <div>
             <h3 className="text-xl font-semibold text-[#0BA94C] mb-6 text-center">For Streamers</h3>
@@ -189,7 +189,9 @@ export default function HowItWorksDiagram({
           </div>
 
           {/* Community Node */}
-          <CommunityNode />
+          <div className="flex justify-center">
+            <CommunityNode />
+          </div>
 
           {/* Learners Flow */}
           <div>

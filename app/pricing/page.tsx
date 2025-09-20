@@ -43,14 +43,6 @@ export default function PricingPage() {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Link
-              href="/join"
-              className="group relative inline-block bg-[#0BA94C] text-black font-semibold px-8 py-3 rounded-lg hover:bg-[#0BA94C]/90 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[#0BA94C]/25"
-            >
-              <span className="relative z-10">Join Waitlist</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-[#0BA94C] to-[#0BA94C]/80 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-            </Link>
-
             <div className="flex items-center gap-2 text-[#ABAEB6] text-sm">
               <Lock className="w-4 h-4 text-[#0BA94C]" />
               <span>Pricing unlocks soon</span>

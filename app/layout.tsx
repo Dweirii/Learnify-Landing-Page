@@ -7,8 +7,11 @@ import './globals.css'
 
 export const metadata: Metadata = {
   title: 'Learnify',
-  description: 'Learnify LiveStream Platform',
+  description: 'Learnify LiveStream Platform for Live Learning, Project-Based Tracks, Gamification, and Community in one place to bridge the skill gap.',
   generator: 'Learnify',
+  icons: {
+    icon: '/favicon.ico',
+  },
 }
 
 export default function RootLayout({

@@ -54,7 +54,7 @@ const imageVariants: Variants = {
 
 export default function Hero({
   overview = "The first platform in the MENA to combine live learning, project-based tracks, gamification, and community in one place to bridge the skill gap.",
-  ctaHref = "/join",
+  ctaHref = "#join",
   secondaryHref = "/features",
   images,
   className = "bg-transparent",

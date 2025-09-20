@@ -1,6 +1,7 @@
 "use client"
 
 import type React from "react"
+import { useState } from "react"
 
 import { motion } from "framer-motion"
 import { Card, CardContent } from "@/components/ui/card"
@@ -16,6 +17,8 @@ import {
   ShieldCheck,
   Coins,
   ArrowRight,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
@@ -179,6 +182,10 @@ export default function KeyFeatures({
   learnMoreHref = "/features",
   className,
 }: KeyFeaturesProps) {
+  const [showAll, setShowAll] = useState(false)
+  const initialFeaturesCount = 3
+  const visibleFeatures = showAll ? features : features.slice(0, initialFeaturesCount)
+
   return (
     <section
       aria-labelledby="features-heading"
@@ -213,11 +220,40 @@ export default function KeyFeatures({
 
         {/* Features Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-          {features.map((feature, index) => (
+          {visibleFeatures.map((feature, index) => (
             <FeatureCard key={feature.title} feature={feature} index={index} />
           ))}
-
         </div>
+
+        {/* See More/Less Button */}
+        {features.length > initialFeaturesCount && (
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-50px" }}
+            transition={{ duration: 0.6, ease: "easeOut", delay: 0.3 }}
+            className="text-center mt-8"
+          >
+            <Button
+              onClick={() => setShowAll(!showAll)}
+              variant="outline"
+              className="border-[#0BA94C]/50 text-[#0BA94C] hover:bg-[#0BA94C]/10 hover:border-[#0BA94C] transition-all duration-300 bg-transparent px-6 py-2"
+              aria-label={showAll ? "Show fewer features" : "Show all features"}
+            >
+              {showAll ? (
+                <>
+                  Show Less
+                  <ChevronUp className="w-4 h-4 ml-2" />
+                </>
+              ) : (
+                <>
+                  See More Features
+                  <ChevronDown className="w-4 h-4 ml-2" />
+                </>
+              )}
+            </Button>
+          </motion.div>
+        )}
       </div>
     </section>
   )
