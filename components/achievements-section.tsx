@@ -23,19 +23,19 @@ const defaultAchievements: Achievement[] = [
     title: "Global Recognition",
     description: "Participated in the international CABSAT Conference.",
     icon: Globe,
-    image: "/placeholder-33dfz.png",
+    image: "/cabsat.jpg",
   },
   {
-    title: "UJIEC Competition – 3rd Place Winners",
+    title: "UJIEC Competition",
     description: "Winning 3rd place, adding credibility and new opportunities.",
     icon: Medal,
-    image: "/placeholder-6g2fi.png",
+    image: "/uj.jpg",
   },
   {
     title: "User Growth Milestone",
     description: "Acquired over 500 users in a single day upon launch.",
     icon: Users,
-    image: "/placeholder-4u5jl.png",
+    image: "/user-growth.jpg",
   },
 ]
 
