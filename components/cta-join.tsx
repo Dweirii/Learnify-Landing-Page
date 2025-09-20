@@ -18,7 +18,6 @@ interface CtaJoinProps {
 }
 
 export default function CtaJoin({
-  title = "Start Your Learnify Journey Today",
   subtitle = "Be part of the future of learning.",
   actionHref,
   className,
@@ -114,7 +113,7 @@ export default function CtaJoin({
     <section className={cn("bg-transparent", className)}>
       <div className="max-w-screen-md mx-auto px-4 sm:px-6 py-16">
         <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">{title}</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Start Your <span className="text-[#0BA94C]">Learnify</span> Journey Today</h2>
           <p className="text-lg text-[#ABAEB6]">{subtitle}</p>
         </div>
 

@@ -40,7 +40,6 @@ const defaultAchievements: Achievement[] = [
 ]
 
 export default function AchievementsSection({
-  title = "What Learnify achieved so far?",
   items = defaultAchievements,
   className = "",
 }: AchievementsSectionProps) {
@@ -50,7 +49,7 @@ export default function AchievementsSection({
         {/* Header */}
         <div className="text-center mb-12">
           <h2 id="achievements-heading" className="text-3xl md:text-4xl font-bold text-white mb-4">
-            {title}
+              What <span className="text-[#0BA94C]">Learnify</span> achieved so far?
           </h2>
           <div className="w-24 h-1 bg-[#0BA94C] mx-auto rounded-full"></div>
         </div>

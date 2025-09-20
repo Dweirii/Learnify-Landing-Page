@@ -118,7 +118,7 @@ const FlowStep = ({
     >
       <Card className="bg-white/5 border-white/10 backdrop-blur-sm p-4 w-full max-w-xs hover:bg-white/10 transition-colors duration-300">
         <div className="flex items-center gap-3">
-          <div className={`p-2 rounded-full ${isStreamer ? "bg-[#0BA94C]" : "bg-[#ABAEB6]"}`}>
+          <div className={`p-2 rounded-full ${isStreamer ? "bg-[#0BA94C]" : "bg-[#0BA94C]"}`}>
             <Icon className="w-5 h-5 text-white" />
           </div>
           <p className="text-white text-sm font-medium">{step.title}</p>
@@ -130,32 +130,10 @@ const FlowStep = ({
 
 export const CommunityNode = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0, scale: 0.8 }}
-      whileInView={{ opacity: 1, scale: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.8, delay: 0.3 }}
-      className="flex justify-center"
-    >
-      <motion.div
-        animate={{
-          boxShadow: [
-            "0 0 15px #0BA94C66",
-            "0 0 25px #0BA94C99",
-            "0 0 15px #0BA94C66",
-          ],
-        }}
-        transition={{
-          duration: 2,
-          repeat: Infinity,
-          ease: "easeInOut",
-        }}
-        className="bg-[#0BA94C] rounded-full w-28 h-28 flex flex-col items-center justify-center text-center"
-      >
-        <Users className="w-6 h-6 text-white mb-1" />
-        <p className="text-white font-semibold text-sm">Community</p>
-      </motion.div>
-    </motion.div>
+    <div className="flex flex-row gap-4 items-center bg-[#0BA94C] rounded-md w-40 h-12 justify-center text-center">
+      <Users className="size-6 text-white" />
+      <p className="text-white font-semibold text-sm">Community</p>
+    </div>
   )
 }
 
@@ -218,10 +196,10 @@ export default function HowItWorksDiagram({
             <div className="flex justify-center mb-6">
               <AnimatedArrow direction="down" delay={streamers.length * 0.2 + 1.2} />
             </div>
-            <h3 className="text-xl font-semibold text-[#ABAEB6] mb-6 text-center">For Learners</h3>
+            <h3 className="text-xl font-semibold text-[#0BA94C] mb-6 text-center">For Learners</h3>
             <ol className="space-y-6" role="list">
               {learners.map((step, index) => (
-                <li key={index} className="flex flex-col items-center">
+                <li key={index} className="flex flex-col items-center text-[#0BA94C]">
                   <FlowStep step={step} index={index + streamers.length + 1} isStreamer={false} />
                   {index < learners.length - 1 && (
                     <AnimatedArrow
@@ -242,10 +220,10 @@ export default function HowItWorksDiagram({
             {/* Streamers Flow - Top */}
             <div>
               <h3 className="text-xl font-semibold text-[#0BA94C] mb-8 text-center">For Streamers</h3>
-              <ol className="flex items-center justify-center gap-4" role="list">
+              <ol className="flex items-center justify-center gap-4 text-[#0BA94C]" role="list">
                 {streamers.map((step, index) => (
                   <React.Fragment key={index}>
-                    <li>
+                    <li className="text-[#0BA94C]">
                       <FlowStep step={step} index={index} isStreamer={true} />
                     </li>
                     {index < streamers.length - 1 && <AnimatedArrow direction="right" delay={index * 0.2 + 0.6} />}
@@ -325,11 +303,11 @@ export default function HowItWorksDiagram({
 
             {/* Learners Flow - Bottom */}
             <div>
-              <h3 className="text-xl font-semibold text-[#ABAEB6] mb-8 text-center">For Learners</h3>
+              <h3 className="text-xl font-semibold text-[#0BA94C] mb-8 text-center">For Learners</h3>
               <ol className="flex items-center justify-center gap-4" role="list">
                 {learners.map((step, index) => (
                   <React.Fragment key={index}>
-                    <li>
+                    <li className="text-[#0BA94C]">
                       <FlowStep step={step} index={index + streamers.length + 1} isStreamer={false} />
                     </li>
                     {index < learners.length - 1 && (

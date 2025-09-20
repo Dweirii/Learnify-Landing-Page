@@ -21,7 +21,7 @@ export default function WhyJoin() {
   ]
 
   return (
-    <section className="py-16 md:py-24 bg-[#061A15]">
+    <section className="py-16 md:py-24 bg-transparent">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Why <span className="text-[#0BA94C]">Join</span> Us</h2>

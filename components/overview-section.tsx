@@ -68,7 +68,6 @@ function StatCard({ value, label, icon }: StatCardProps) {
 export default function OverviewSection({
   title = "Platform Overview",
   copy = "Learnify revolutionizes education in the Arab world by combining live-streaming technology with interactive learning experiences. Our platform connects passionate educators with eager learners through real-time engagement, practical skill development, and community-driven knowledge sharing.\n\nUnlike traditional e-learning platforms that rely on pre-recorded content, Learnify emphasizes live interaction, immediate feedback, and collaborative learning environments. This approach addresses the growing demand for dynamic, engaging educational experiences that prepare students for today's competitive job market.",
-  problemTitle = "The Learning Gap Challenge",
   stats = [
     {
       value: "77%",
@@ -100,7 +99,7 @@ export default function OverviewSection({
   return (
     <section
       aria-labelledby="overview-heading"
-      className={cn("relative py-16 md:py-24 lg:py-32", "bg-transparent", className)}
+      className={cn("relative py-14 md:py-14 lg:py-24", "bg-transparent", className)}
     >
       <div className="absolute inset-0 bg-gradient-radial from-[#0BA94C]/5 via-transparent to-transparent opacity-30" />
 
@@ -126,7 +125,7 @@ export default function OverviewSection({
 
           {/* Right Column: Problem Stats */}
           <div className="space-y-6">
-            <h3 className="text-xl font-semibold text-white">{problemTitle}</h3>
+            <h3 className="text-xl font-semibold text-white">The <span className="text-[#0BA94C]">Learning Gap</span> Challenge</h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" role="list">
               {stats.map((stat, index) => (

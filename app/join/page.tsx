@@ -7,7 +7,7 @@ import Footer from "@/components/footer"
 
 export default function JoinPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#061A15] to-[#102D26]">
+    <div className="min-h-screen bg-gradient-to-br from-[#061A15] via-[#102D26] to-[#061A15]">
       <Navbar />
       <main className="pt-20 pb-12 md:pt-32 md:pb-20">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">

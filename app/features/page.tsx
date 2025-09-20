@@ -21,7 +21,7 @@ export default function FeaturesPage() {
         {/* Core Learning Features */}
         <section className="pb-16 md:pb-20">
           <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3 md:mb-4">Core Learning Experience</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3 md:mb-4">Core <span className="text-[#0BA94C]">Learning</span> Experience</h2>
             <div className="w-16 md:w-20 h-1 bg-[#0BA94C] mx-auto"></div>
           </div>
 
@@ -72,7 +72,7 @@ export default function FeaturesPage() {
         {/* Engagement Features */}
         <section className="pb-16 md:pb-20">
           <div className="text-center mb-8 md:mb-12">
-            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3 md:mb-4">Stay Engaged & Motivated</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3 md:mb-4">Stay <span className="text-[#0BA94C]">Engaged</span> & Motivated</h2>
             <div className="w-16 md:w-20 h-1 bg-[#0BA94C] mx-auto"></div>
           </div>
 
@@ -158,14 +158,14 @@ export default function FeaturesPage() {
         {/* CTA Section */}
         <section className="border-t border-white/10 py-16 md:py-20 text-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-4 md:mb-6 px-2">
-            Ready to Transform Your Learning?
+            Ready to Transform Your <span className="text-[#0BA94C]">Learning</span>?
           </h2>
           <p className="text-[#ABAEB6] text-base md:text-lg mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed px-4">
             Join thousands of learners already growing their skills and building their future on Learnify.
           </p>
           <a
             href="/join"
-            className="inline-block bg-[#0BA94C] text-white font-semibold rounded-xl px-6 py-3 md:px-8 md:py-4 text-base md:text-lg hover:brightness-110 hover:scale-105 transition-all duration-200"
+            className="inline-block bg-[#0BA94C] text-white font-semibold rounded-xl px-6 py-3 md:px-6 md:py-4 text-base md:text-lg hover:brightness-110 hover:scale-105 transition-all duration-200"
           >
             Start Learning Today
           </a>

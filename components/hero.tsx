@@ -53,7 +53,6 @@ const imageVariants: Variants = {
 }
 
 export default function Hero({
-  tagline = "Learn live. Build real. Level up.",
   overview = "The first platform in the MENA to combine live learning, project-based tracks, gamification, and community in one place to bridge the skill gap.",
   ctaHref = "/join",
   secondaryHref = "/features",
@@ -80,7 +79,7 @@ export default function Hero({
               variants={itemVariants}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 text-balance"
             >
-              {tagline}
+              Learn live. <span className="text-[#0BA94C]">Build  real.</span> Level up.
             </motion.h2>
 
             {/* Overview */}

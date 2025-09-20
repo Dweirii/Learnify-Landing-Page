@@ -27,11 +27,8 @@ const values = [
 
 export default function LifeAtLearnify() {
   return (
-    <section className="relative bg-gradient-to-b from-[#061A15] to-[#102D26] py-16">
-      {/* Subtle background graphic */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[#0BA94C]/5 rounded-full blur-3xl" />
-      </div>
+    <section className="relative bg-transparent py-16">
+
 
       <div className="relative max-w-screen-xl mx-auto px-4 sm:px-6">
         {/* Header */}
