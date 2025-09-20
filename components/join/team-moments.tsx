@@ -162,7 +162,7 @@ const teamPhotos: Photo[] = [
   },
 ];
 
-const collagePhotos = teamPhotos.slice(0, 5);
+const collagePhotos = teamPhotos.slice(0, 3);
 
 export default function TeamMoments() {
   const [lightboxOpen, setLightboxOpen] = useState(false);

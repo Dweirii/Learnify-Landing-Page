@@ -91,6 +91,7 @@ enum JobType {
   CONTRACT
   INTERNSHIP
   FREELANCE
+  VOLUNTEER
 }
 
 enum JobStatus {
