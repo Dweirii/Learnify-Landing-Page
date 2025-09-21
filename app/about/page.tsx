@@ -298,6 +298,22 @@ export default function AboutPage() {
 
           {/* Team Members Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            {/* Dr. Reem AlFayez */}
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#0BA94C]/10 group">
+              <div className="h-20 w-20 rounded-full mx-auto mb-4 overflow-hidden group-hover:ring-2 group-hover:ring-[#0BA94C]/50 transition-all duration-300">
+                <img
+                  src="/Reem-AlFayez.jpg"
+                  alt="Dr. Reem AlFayez - Mentor"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-xl font-bold text-white text-center mb-2">Dr. Reem AlFayez</h3>
+              <p className="text-[#0BA94C] text-sm text-center mb-4 font-medium">Mentor</p>
+              <p className="text-[#ABAEB6] leading-relaxed text-center">
+                Leads Learnify's mentorship program, provides guidance to Learnify members, and helps them grow.
+              </p>
+            </div>
+
             {/* Zaid Dweiri */}
             <div className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-[#0BA94C]/10 group">
               <div className="h-20 w-20 rounded-full mx-auto mb-4 overflow-hidden group-hover:ring-2 group-hover:ring-[#0BA94C]/50 transition-all duration-300">
@@ -376,7 +392,7 @@ export default function AboutPage() {
               <h3 className="text-xl font-bold text-white text-center mb-2">Firas Ballol</h3>
               <p className="text-[#0BA94C] text-sm text-center mb-4 font-medium">Junior Developer</p>
               <p className="text-[#ABAEB6] leading-relaxed text-center">
-                Supports technical tasks, builds pages like landing & registration, and assists with testing and
+                Supports technical tasks, assists with testing and
                 performance improvements.
               </p>
             </div>

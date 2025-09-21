@@ -138,9 +138,9 @@ export default function Hero({
               variants={itemVariants}
               className="flex flex-wrap justify-center lg:justify-start gap-6 mt-8 text-sm text-[#ABAEB6]"
             >
-              <span>10k+ sessions</span>
+              <span>10+ sessions</span>
               <span className="opacity-50">•</span>
-              <span>500+ projects</span>
+              <span>5+ projects</span>
               <span className="opacity-50">•</span>
               <span>95% satisfaction</span>
             </motion.div>
