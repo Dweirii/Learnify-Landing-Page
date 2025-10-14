@@ -7,13 +7,13 @@ export const jobApplicationSchema = z.object({
   lastName: z.string().min(2, 'Last name must be at least 2 characters').max(50, 'Last name must be less than 50 characters'),
   email: z.string().email('Invalid email address').max(100, 'Email must be less than 100 characters'),
   phone: z.string().optional().refine((val) => !val || /^[\+]?[0-9\s\-\(\)]{7,20}$/.test(val), 'Invalid phone number'),
-  resume: z.string().url('Invalid resume URL').optional().or(z.literal('')),
+  resume: z.string().optional().refine((val) => !val || z.string().url().safeParse(val).success, 'Invalid resume URL'),
   coverLetter: z.string().max(2000, 'Cover letter must be less than 2000 characters').optional(),
   experience: z.string().max(1000, 'Experience must be less than 1000 characters').optional(),
-  portfolio: z.string().url('Invalid portfolio URL').optional().or(z.literal('')),
-  linkedin: z.string().url('Invalid LinkedIn URL').optional().or(z.literal('')),
-  github: z.string().url('Invalid GitHub URL').optional().or(z.literal('')),
-  website: z.string().url('Invalid website URL').optional().or(z.literal('')),
+  portfolio: z.string().optional().refine((val) => !val || z.string().url().safeParse(val).success, 'Invalid portfolio URL'),
+  linkedin: z.string().optional().refine((val) => !val || z.string().url().safeParse(val).success, 'Invalid LinkedIn URL'),
+  github: z.string().optional().refine((val) => !val || z.string().url().safeParse(val).success, 'Invalid GitHub URL'),
+  website: z.string().optional().refine((val) => !val || z.string().url().safeParse(val).success, 'Invalid website URL'),
 })
 
 // Contact Form Validation
@@ -29,6 +29,9 @@ export const contactFormSchema = z.object({
 // Newsletter Subscription Validation
 export const newsletterSchema = z.object({
   email: z.string().email('Invalid email address').max(100, 'Email must be less than 100 characters'),
+  name: z.string().min(2, 'Name must be at least 2 characters').max(100, 'Name must be less than 100 characters').optional(),
+  userType: z.enum(['user', 'streamer']).optional().default('user'),
+  skills: z.array(z.string()).optional().default([]),
   source: z.string().max(100, 'Source must be less than 100 characters').optional(),
 })
 

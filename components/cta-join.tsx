@@ -7,6 +7,8 @@ import { Loader2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
+import { Checkbox } from "@/components/ui/checkbox"
 import { useToast } from "@/hooks/use-toast"
 import { cn } from "@/lib/utils"
 
@@ -23,13 +25,43 @@ export default function CtaJoin({
   className,
 }: CtaJoinProps) {
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [formData, setFormData] = useState({ name: "", email: "" })
-  const [errors, setErrors] = useState({ name: "", email: "" })
+  const [formData, setFormData] = useState({ 
+    name: "", 
+    email: "", 
+    userType: "user" as "user" | "streamer",
+    skills: [] as string[]
+  })
+  const [errors, setErrors] = useState({ name: "", email: "", userType: "", skills: "" })
   const [submitError, setSubmitError] = useState<string | null>(null)
   const { toast } = useToast()
 
+  // Available skills for streamers
+  const availableSkills = [
+    "Programming & Software Development",
+    "Web Development",
+    "Mobile App Development", 
+    "Data Science & Analytics",
+    "Machine Learning & AI",
+    "UI/UX Design",
+    "Graphic Design",
+    "Digital Marketing",
+    "Content Creation",
+    "Video Editing",
+    "Photography",
+    "Music Production",
+    "Language Learning",
+    "Mathematics & Statistics",
+    "Business & Entrepreneurship",
+    "Finance & Economics",
+    "Health & Fitness",
+    "Cooking & Culinary Arts",
+    "Art & Drawing",
+    "Gaming & Esports",
+    "Other"
+  ]
+
   const validateForm = () => {
-    const newErrors = { name: "", email: "" }
+    const newErrors = { name: "", email: "", userType: "", skills: "" }
     let isValid = true
 
     if (formData.name.length < 2) {
@@ -40,6 +72,16 @@ export default function CtaJoin({
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
     if (!emailRegex.test(formData.email)) {
       newErrors.email = "Please enter a valid email address"
+      isValid = false
+    }
+
+    if (!formData.userType) {
+      newErrors.userType = "Please select how you'd like to join"
+      isValid = false
+    }
+
+    if (formData.userType === "streamer" && formData.skills.length === 0) {
+      newErrors.skills = "Please select at least one skill you'd like to stream"
       isValid = false
     }
 
@@ -68,6 +110,9 @@ export default function CtaJoin({
         },
         body: JSON.stringify({
           email: formData.email,
+          name: formData.name,
+          userType: formData.userType,
+          skills: formData.userType === "streamer" ? formData.skills : [],
           source: "Home Page CTA"
         }),
       })
@@ -81,9 +126,9 @@ export default function CtaJoin({
       if (result.success) {
         toast({
           title: "Welcome to Learnify!",
-          description: result.message || "You've successfully joined our community.",
+          description: result.message || `You've successfully joined our community as a ${formData.userType}!`,
         })
-        setFormData({ name: "", email: "" })
+        setFormData({ name: "", email: "", userType: "user", skills: [] })
       } else {
         throw new Error(result.error || "Failed to join. Please try again.")
       }
@@ -100,14 +145,29 @@ export default function CtaJoin({
     }
   }
 
-  const handleInputChange = (field: string, value: string) => {
+  const handleInputChange = (field: string, value: string | string[]) => {
     setFormData((prev) => ({ ...prev, [field]: value }))
     if (errors[field as keyof typeof errors]) {
       setErrors((prev) => ({ ...prev, [field]: "" }))
     }
   }
 
-  const isFormValid = formData.name.length >= 2 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)
+  const handleSkillToggle = (skill: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      skills: prev.skills.includes(skill)
+        ? prev.skills.filter(s => s !== skill)
+        : [...prev.skills, skill]
+    }))
+    if (errors.skills) {
+      setErrors((prev) => ({ ...prev, skills: "" }))
+    }
+  }
+
+  const isFormValid = formData.name.length >= 2 && 
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email) &&
+    formData.userType &&
+    (formData.userType === "user" || formData.skills.length > 0)
 
   return (
     <section className={cn("bg-transparent", className)} id="join">
@@ -171,6 +231,65 @@ export default function CtaJoin({
               )}
             </div>
 
+            <div className="space-y-4">
+              <Label className="text-white text-sm font-medium">
+                How would you like to join Learnify?
+              </Label>
+              <RadioGroup
+                value={formData.userType}
+                onValueChange={(value) => handleInputChange("userType", value)}
+                className="flex flex-col space-y-3"
+              >
+                <div className="flex items-center space-x-3 p-4 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 transition-colors duration-200">
+                  <RadioGroupItem value="user" id="user" className="text-[#0BA94C]" />
+                  <Label htmlFor="user" className="flex-1 cursor-pointer">
+                    <div className="font-medium text-white">Join as a Learner</div>
+                    <div className="text-sm text-[#ABAEB6]">Access live sessions, projects, and community features</div>
+                  </Label>
+                </div>
+                <div className="flex items-center space-x-3 p-4 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 transition-colors duration-200">
+                  <RadioGroupItem value="streamer" id="streamer" className="text-[#0BA94C]" />
+                  <Label htmlFor="streamer" className="flex-1 cursor-pointer">
+                    <div className="font-medium text-white">Join as a Streamer</div>
+                    <div className="text-sm text-[#ABAEB6]">Share your expertise and teach others through live streaming</div>
+                  </Label>
+                </div>
+              </RadioGroup>
+              {errors.userType && (
+                <p className="text-red-400 text-sm" role="alert">
+                  {errors.userType}
+                </p>
+              )}
+            </div>
+
+            {formData.userType === "streamer" && (
+              <div className="space-y-4">
+                <Label className="text-white text-sm font-medium">
+                  What skills would you like to stream? (Select all that apply)
+                </Label>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-h-60 overflow-y-auto">
+                  {availableSkills.map((skill) => (
+                    <div key={skill} className="flex items-center space-x-3">
+                      <Checkbox
+                        id={skill}
+                        checked={formData.skills.includes(skill)}
+                        onCheckedChange={() => handleSkillToggle(skill)}
+                        className="text-[#0BA94C] border-white/20"
+                      />
+                      <Label htmlFor={skill} className="text-sm text-[#ABAEB6] cursor-pointer hover:text-white transition-colors duration-200">
+                        {skill}
+                      </Label>
+                    </div>
+                  ))}
+                </div>
+                {errors.skills && (
+                  <p className="text-red-400 text-sm" role="alert">
+                    {errors.skills}
+                  </p>
+                )}
+              </div>
+            )}
+
             <Button
               type="submit"
               className="w-full h-12 bg-[#0BA94C] hover:bg-[#0BA94C]/90 text-white font-semibold text-base transition-colors duration-200 focus:ring-2 focus:ring-[#0BA94C] focus:ring-offset-2 focus:ring-offset-transparent"
@@ -179,10 +298,10 @@ export default function CtaJoin({
               {isSubmitting ? (
                 <>
                   <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  Joining...
+                  {formData.userType === "streamer" ? "Joining as Streamer..." : "Joining..."}
                 </>
               ) : (
-                "Join Us"
+                formData.userType === "streamer" ? "Join as Streamer" : "Join as Learner"
               )}
             </Button>
 

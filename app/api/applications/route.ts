@@ -98,10 +98,12 @@ export async function POST(request: NextRequest) {
     }
 
     // Check for duplicate application
-    const existingApplication = await prisma.jobApplication.findFirst({
+    const existingApplication = await prisma.jobApplication.findUnique({
       where: {
-        jobId: validatedData.jobId,
-        email: validatedData.email
+        jobId_email: {
+          jobId: validatedData.jobId,
+          email: validatedData.email
+        }
       }
     })
 

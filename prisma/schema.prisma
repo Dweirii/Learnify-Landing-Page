@@ -26,6 +26,8 @@ model Job {
   isRemote    Boolean  @default(false)
   benefits    String[]
   skills      String[]
+  postedAt    DateTime @default(now()) // When job was posted
+  closedAt    DateTime? // When job was closed
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
@@ -50,11 +52,15 @@ model JobApplication {
   website     String?
   status      ApplicationStatus @default(PENDING)
   notes       String? // Internal notes for admin
+  appliedAt   DateTime @default(now()) // When they applied
+  reviewedAt  DateTime? // When application was reviewed
+  reviewedBy  String? // Who reviewed the application
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
   job Job @relation(fields: [jobId], references: [id], onDelete: Cascade)
 
+  @@unique([jobId, email]) // Prevent duplicate applications from same email
   @@map("job_applications")
 }
 
@@ -77,6 +83,9 @@ model ContactSubmission {
 model NewsletterSubscription {
   id        String   @id @default(cuid())
   email     String   @unique
+  name      String?
+  userType  UserType? @default(USER)
+  skills    String[]
   isActive  Boolean  @default(true)
   source    String? // Where they subscribed from
   createdAt DateTime @default(now())
@@ -116,4 +125,9 @@ enum ContactStatus {
   IN_PROGRESS
   RESOLVED
   CLOSED
+}
+
+enum UserType {
+  USER
+  STREAMER
 }

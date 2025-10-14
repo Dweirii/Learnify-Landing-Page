@@ -31,7 +31,10 @@ export async function POST(request: NextRequest) {
           },
           data: {
             isActive: true,
-            source: validatedData.source || 'Home Page CTA'
+            source: validatedData.source || 'Home Page CTA',
+            name: validatedData.name,
+            userType: validatedData.userType === 'streamer' ? 'STREAMER' : 'USER',
+            skills: validatedData.skills || []
           }
         })
 
@@ -46,7 +49,9 @@ export async function POST(request: NextRequest) {
     const subscription = await prisma.newsletterSubscription.create({
       data: {
         ...validatedData,
-        source: validatedData.source || 'Home Page CTA'
+        source: validatedData.source || 'Home Page CTA',
+        userType: validatedData.userType === 'streamer' ? 'STREAMER' : 'USER',
+        skills: validatedData.skills || []
       }
     })
 
