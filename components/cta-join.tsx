@@ -56,7 +56,6 @@ export default function CtaJoin({
     "Health & Fitness",
     "Cooking & Culinary Arts",
     "Art & Drawing",
-    "Gaming & Esports",
     "Other"
   ]
 
@@ -243,14 +242,14 @@ export default function CtaJoin({
                 <div className="flex items-center space-x-3 p-4 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 transition-colors duration-200">
                   <RadioGroupItem value="user" id="user" className="text-[#0BA94C]" />
                   <Label htmlFor="user" className="flex-1 cursor-pointer">
-                    <div className="font-medium text-white">Join as a Learner</div>
+                    <div className="font-medium text-white">Join as Learner</div>
                     <div className="text-sm text-[#ABAEB6]">Access live sessions, projects, and community features</div>
                   </Label>
                 </div>
                 <div className="flex items-center space-x-3 p-4 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 transition-colors duration-200">
                   <RadioGroupItem value="streamer" id="streamer" className="text-[#0BA94C]" />
                   <Label htmlFor="streamer" className="flex-1 cursor-pointer">
-                    <div className="font-medium text-white">Join as a Streamer</div>
+                    <div className="font-medium text-white">Join as Streamer</div>
                     <div className="text-sm text-[#ABAEB6]">Share your expertise and teach others through live streaming</div>
                   </Label>
                 </div>
