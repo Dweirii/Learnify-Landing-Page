@@ -124,7 +124,7 @@ export default function Navbar({ items = defaultItems, ctaHref = "/join", classN
             asChild
             className="bg-[#0BA94C] hover:bg-[#0BA94C]/90 text-white font-medium px-6 py-2 transition-colors duration-200 focus:ring-2 focus:ring-[#0BA94C] focus:ring-offset-2 focus:ring-offset-transparent motion-reduce:transition-none"
           >
-            <Link href={ctaHref}>Join Learnify</Link>
+            <Link href={ctaHref}>Join Learnify Team</Link>
           </Button>
         </div>
 
@@ -189,7 +189,7 @@ export default function Navbar({ items = defaultItems, ctaHref = "/join", classN
                       asChild
                       className="w-full bg-[#0BA94C] hover:bg-[#0BA94C]/90 text-white font-medium py-3 transition-colors duration-200 focus:ring-2 focus:ring-[#0BA94C] focus:ring-offset-2 focus:ring-offset-[#061A15] motion-reduce:transition-none"
                     >
-                      <Link href={ctaHref}>Join Learnify</Link>
+                      <Link href={ctaHref}>Join Learnify Team</Link>
                     </Button>
                   </SheetClose>
                 </div>
