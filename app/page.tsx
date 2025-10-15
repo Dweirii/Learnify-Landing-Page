@@ -12,56 +12,72 @@ import UniversitySupport from "@/components/university-support"
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#061A15] via-[#102D26] to-[#061A15]">
+    <div className="min-h-screen bg-gradient-to-br from-[#061A15] via-[#102D26] to-[#061A15] overflow-x-hidden">
       <Navbar />
       <Hero />
-        <div className="flex items-center justify-center">
+      <div className="w-full px-4">
+        <div className="flex items-center justify-center max-w-7xl mx-auto">
           <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-white/10"></div>
           <div className="mx-4 w-2 h-2 bg-[#0BA94C] rounded-full animate-pulse"></div>
           <div className="flex-1 h-px bg-gradient-to-l from-transparent via-white/20 to-white/10"></div>
         </div>
+      </div>
       <OverviewSection />
-        <div className="flex items-center justify-center mb-6">
+      <div className="w-full px-4">
+        <div className="flex items-center justify-center mb-6 max-w-7xl mx-auto">
           <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-white/10"></div>
           <div className="mx-4 w-2 h-2 bg-[#0BA94C] rounded-full animate-pulse"></div>
           <div className="flex-1 h-px bg-gradient-to-l from-transparent via-white/20 to-white/10"></div>
         </div>
+      </div>
       <VisionSection />
-        <div className="flex items-center justify-center mb-6">
-            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-white/10"></div>
-            <div className="mx-4 w-2 h-2 bg-[#0BA94C] rounded-full animate-pulse"></div>
-            <div className="flex-1 h-px bg-gradient-to-l from-transparent via-white/20 to-white/10"></div>
+      <div className="w-full px-4">
+        <div className="flex items-center justify-center mb-6 max-w-7xl mx-auto">
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-white/10"></div>
+          <div className="mx-4 w-2 h-2 bg-[#0BA94C] rounded-full animate-pulse"></div>
+          <div className="flex-1 h-px bg-gradient-to-l from-transparent via-white/20 to-white/10"></div>
         </div>
+      </div>
       <KeyFeatures />
-        <div className="flex items-center justify-center mt-14">
-            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-white/10"></div>
-            <div className="mx-4 w-2 h-2 bg-[#0BA94C] rounded-full animate-pulse"></div>
-            <div className="flex-1 h-px bg-gradient-to-l from-transparent via-white/20 to-white/10"></div>
+      <div className="w-full px-4">
+        <div className="flex items-center justify-center mt-14 max-w-7xl mx-auto">
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-white/10"></div>
+          <div className="mx-4 w-2 h-2 bg-[#0BA94C] rounded-full animate-pulse"></div>
+          <div className="flex-1 h-px bg-gradient-to-l from-transparent via-white/20 to-white/10"></div>
         </div>
+      </div>
       <TargetAudience />
-        <div className="flex items-center justify-center mb-16">
-            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-white/10"></div>
-            <div className="mx-4 w-2 h-2 bg-[#0BA94C] rounded-full animate-pulse"></div>
-            <div className="flex-1 h-px bg-gradient-to-l from-transparent via-white/20 to-white/10"></div>
+      <div className="w-full px-4">
+        <div className="flex items-center justify-center mb-16 max-w-7xl mx-auto">
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-white/10"></div>
+          <div className="mx-4 w-2 h-2 bg-[#0BA94C] rounded-full animate-pulse"></div>
+          <div className="flex-1 h-px bg-gradient-to-l from-transparent via-white/20 to-white/10"></div>
         </div>
+      </div>
       <HowItWorksDiagram />
-        <div className="flex items-center justify-center my-10">
-            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-white/10"></div>
-            <div className="mx-4 w-2 h-2 bg-[#0BA94C] rounded-full animate-pulse"></div>
-            <div className="flex-1 h-px bg-gradient-to-l from-transparent via-white/20 to-white/10"></div>
+      <div className="w-full px-4">
+        <div className="flex items-center justify-center my-10 max-w-7xl mx-auto">
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-white/10"></div>
+          <div className="mx-4 w-2 h-2 bg-[#0BA94C] rounded-full animate-pulse"></div>
+          <div className="flex-1 h-px bg-gradient-to-l from-transparent via-white/20 to-white/10"></div>
         </div>
+      </div>
       <AchievementsSection />
-        <div className="flex items-center justify-center my-10">
-            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-white/10"></div>
-            <div className="mx-4 w-2 h-2 bg-[#0BA94C] rounded-full animate-pulse"></div>
-            <div className="flex-1 h-px bg-gradient-to-l from-transparent via-white/20 to-white/10"></div>
+      <div className="w-full px-4">
+        <div className="flex items-center justify-center my-10 max-w-7xl mx-auto">
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-white/10"></div>
+          <div className="mx-4 w-2 h-2 bg-[#0BA94C] rounded-full animate-pulse"></div>
+          <div className="flex-1 h-px bg-gradient-to-l from-transparent via-white/20 to-white/10"></div>
         </div>
+      </div>
       <CtaJoin />
-        <div className="flex items-center justify-center mt-10">
-            <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-white/10"></div>
-            <div className="mx-4 w-2 h-2 bg-[#0BA94C] rounded-full animate-pulse"></div>
-            <div className="flex-1 h-px bg-gradient-to-l from-transparent via-white/20 to-white/10"></div>
+      <div className="w-full px-4">
+        <div className="flex items-center justify-center mt-10 max-w-7xl mx-auto">
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-white/10"></div>
+          <div className="mx-4 w-2 h-2 bg-[#0BA94C] rounded-full animate-pulse"></div>
+          <div className="flex-1 h-px bg-gradient-to-l from-transparent via-white/20 to-white/10"></div>
         </div>
+      </div>
       <UniversitySupport />
       <Footer />
     </div>

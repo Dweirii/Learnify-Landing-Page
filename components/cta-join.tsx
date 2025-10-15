@@ -199,14 +199,20 @@ export default function CtaJoin({
 
   return (
     <section className={cn("bg-transparent", className)} id="join">
-      <div className="max-w-screen-md mx-auto px-4 sm:px-6 py-16">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Start Your <span className="text-[#0BA94C]">Learnify</span> Journey Today</h2>
-          <p className="text-lg text-[#ABAEB6]">{subtitle}</p>
+      <div className="max-w-screen-lg mx-auto px-4 sm:px-6 py-16">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+            Start Your <span className="bg-gradient-to-r from-[#0BA94C] to-[#10B981] bg-clip-text text-transparent">Learnify</span> Journey Today
+          </h2>
+          <p className="text-lg md:text-xl text-[#ABAEB6] max-w-2xl mx-auto leading-relaxed">{subtitle}</p>
         </div>
 
-        <div className="rounded-2xl bg-white/5 border border-white/10 p-6 md:p-8 backdrop-blur-sm shadow-sm">
-          <form onSubmit={handleSubmit} className="space-y-6">
+        <div className="relative">
+          {/* Background gradient effect */}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0BA94C]/10 via-transparent to-[#0BA94C]/10 rounded-3xl blur-3xl"></div>
+          
+          <div className="relative rounded-3xl bg-white/5 border border-white/10 p-8 md:p-10 backdrop-blur-sm shadow-2xl">
+          <form onSubmit={handleSubmit} className="space-y-8">
             {submitError && (
               <div
                 className="p-4 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-sm"
@@ -217,9 +223,11 @@ export default function CtaJoin({
               </div>
             )}
 
-            <div className="space-y-2">
-              <Label htmlFor="name" className="text-white text-sm font-medium">
-                Name
+            {/* Name Field */}
+            <div className="space-y-3">
+              <Label htmlFor="name" className="text-white text-sm font-semibold flex items-center gap-2">
+                <div className="w-2 h-2 bg-[#0BA94C] rounded-full"></div>
+                Full Name
               </Label>
               <Input
                 id="name"
@@ -227,20 +235,23 @@ export default function CtaJoin({
                 value={formData.name}
                 onChange={(e) => handleInputChange("name", e.target.value)}
                 placeholder="Enter your full name"
-                className="h-12 bg-white/5 border-white/10 text-white placeholder:text-[#ABAEB6] focus:border-[#0BA94C] focus:ring-[#0BA94C] focus:ring-2 focus:ring-offset-0"
+                className="h-14 bg-white/5 border-white/10 text-white placeholder:text-[#ABAEB6] focus:border-[#0BA94C] focus:ring-[#0BA94C] focus:ring-2 focus:ring-offset-0 transition-all duration-300 text-lg"
                 disabled={isSubmitting}
                 required
               />
               {errors.name && (
-                <p className="text-red-400 text-sm" role="alert">
+                <p className="text-red-400 text-sm flex items-center gap-2 animate-in slide-in-from-left-2 duration-300">
+                  <div className="w-1.5 h-1.5 bg-red-400 rounded-full"></div>
                   {errors.name}
                 </p>
               )}
             </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="email" className="text-white text-sm font-medium">
-                Email
+            {/* Email Field */}
+            <div className="space-y-3">
+              <Label htmlFor="email" className="text-white text-sm font-semibold flex items-center gap-2">
+                <div className="w-2 h-2 bg-[#0BA94C] rounded-full"></div>
+                Email Address
               </Label>
               <Input
                 id="email"
@@ -248,12 +259,13 @@ export default function CtaJoin({
                 value={formData.email}
                 onChange={(e) => handleInputChange("email", e.target.value)}
                 placeholder="Enter your email address"
-                className="h-12 bg-white/5 border-white/10 text-white placeholder:text-[#ABAEB6] focus:border-[#0BA94C] focus:ring-[#0BA94C] focus:ring-2 focus:ring-offset-0"
+                className="h-14 bg-white/5 border-white/10 text-white placeholder:text-[#ABAEB6] focus:border-[#0BA94C] focus:ring-[#0BA94C] focus:ring-2 focus:ring-offset-0 transition-all duration-300 text-lg"
                 disabled={isSubmitting}
                 required
               />
               {errors.email && (
-                <p className="text-red-400 text-sm" role="alert">
+                <p className="text-red-400 text-sm flex items-center gap-2 animate-in slide-in-from-left-2 duration-300">
+                  <div className="w-1.5 h-1.5 bg-red-400 rounded-full"></div>
                   {errors.email}
                 </p>
               )}
@@ -318,29 +330,44 @@ export default function CtaJoin({
               </div>
             )}
 
-            <Button
-              type="submit"
-              className="w-full h-12 bg-[#0BA94C] hover:bg-[#0BA94C]/90 text-white font-semibold text-base transition-colors duration-200 focus:ring-2 focus:ring-[#0BA94C] focus:ring-offset-2 focus:ring-offset-transparent"
-              disabled={isSubmitting || !isFormValid}
-            >
-              {isSubmitting ? (
-                <>
-                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                  {formData.userType === "streamer" ? "Joining as Streamer..." : "Joining..."}
-                </>
-              ) : (
-                formData.userType === "streamer" ? "Join as Streamer" : "Join as Learner"
-              )}
-            </Button>
+            {/* Submit Button */}
+            <div className="pt-4">
+              <Button
+                type="submit"
+                className="w-full h-14 bg-gradient-to-r from-[#0BA94C] to-[#10B981] hover:from-[#0BA94C]/90 hover:to-[#10B981]/90 text-white font-semibold text-lg transition-all duration-300 focus:ring-2 focus:ring-[#0BA94C] focus:ring-offset-2 focus:ring-offset-transparent shadow-lg hover:shadow-xl hover:shadow-[#0BA94C]/25 hover:scale-[1.02] active:scale-[0.98]"
+                disabled={isSubmitting || !isFormValid}
+              >
+                {isSubmitting ? (
+                  <div className="flex items-center gap-3">
+                    <Loader2 className="h-5 w-5 animate-spin" />
+                    <span>{formData.userType === "streamer" ? "Joining as Streamer..." : "Joining..."}</span>
+                  </div>
+                ) : (
+                  <div className="flex items-center gap-3">
+                    <span>{formData.userType === "streamer" ? "Join as Streamer" : "Join as Learner"}</span>
+                    <div className="w-2 h-2 bg-white rounded-full"></div>
+                  </div>
+                )}
+              </Button>
+            </div>
 
-            <div className="text-center space-y-2">
-              <p className="text-xs text-[#ABAEB6]">By joining, you agree to our Terms & Privacy.</p>
-              <p className="text-sm text-[#ABAEB6] flex items-center justify-center gap-2">
-                <span className="w-2 h-2 bg-[#0BA94C] rounded-full animate-pulse"></span>
-                500+ learners joined on launch day
-              </p>
+            {/* Footer Info */}
+            <div className="text-center space-y-4 pt-6 border-t border-white/10">
+              <p className="text-xs text-[#ABAEB6]">By joining, you agree to our Terms & Privacy Policy.</p>
+              <div className="flex items-center justify-center gap-3">
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-[#0BA94C] rounded-full animate-pulse"></div>
+                  <span className="text-sm text-[#ABAEB6]">500+ learners joined on launch day</span>
+                </div>
+                <div className="w-1 h-1 bg-[#ABAEB6]/30 rounded-full"></div>
+                <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 bg-[#0BA94C] rounded-full animate-pulse delay-300"></div>
+                  <span className="text-sm text-[#ABAEB6]">Trusted by students worldwide</span>
+                </div>
+              </div>
             </div>
           </form>
+          </div>
         </div>
       </div>
     </section>
