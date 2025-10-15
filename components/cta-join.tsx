@@ -35,29 +35,58 @@ export default function CtaJoin({
   const [submitError, setSubmitError] = useState<string | null>(null)
   const { toast } = useToast()
 
-  // Available skills for streamers
   const availableSkills = [
-    "Programming & Software Development",
+    // ⚙️ Tech & Development
     "Web Development",
-    "Mobile App Development", 
+    "Mobile App Development",
+    "Frontend Engineering",
+    "Backend Engineering",
+    "AI & Machine Learning",
     "Data Science & Analytics",
-    "Machine Learning & AI",
+    "Cybersecurity",
+    "Cloud & DevOps",
+  
+    // 🎨 Creative & Design
     "UI/UX Design",
     "Graphic Design",
-    "Digital Marketing",
+    "3D Design & Animation",
+    "Video Editing & Motion Graphics",
+    "Photography & Cinematography",
+  
+    // 📱 Content & Media
     "Content Creation",
-    "Video Editing",
-    "Photography",
-    "Music Production",
+    "Social Media Strategy",
+    "Digital Marketing & SEO",
+    "Public Speaking & Presentation",
+    "Podcasting",
+  
+    // 💼 Business & Innovation
+    "Entrepreneurship & Startups",
+    "Product Management",
+    "Finance & Investing",
+    "Personal Branding",
+    "Marketing Strategy & Growth Hacking",
+  
+    // 🧠 Study & Lifestyle
+    "Study With Me Sessions",
+    "Productivity & Time Management",
+    "Note-Taking & Learning Techniques",
+    "Career Development",
     "Language Learning",
-    "Mathematics & Statistics",
-    "Business & Entrepreneurship",
-    "Finance & Economics",
-    "Health & Fitness",
-    "Cooking & Culinary Arts",
-    "Art & Drawing",
+    "Mindfulness & Focus",
+    "Life Coaching & Motivation",
+  
+    // 🎵 Art & Creativity
+    "Music Production & Audio Engineering",
+    "Art & Illustration",
+    "Creative Writing",
+  
+    // 🧩 Other
+    "STEM Education",
+    "Soft Skills & Communication",
     "Other"
   ]
+  
 
   const validateForm = () => {
     const newErrors = { name: "", email: "", userType: "", skills: "" }
