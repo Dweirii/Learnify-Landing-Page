@@ -89,12 +89,12 @@ export default function Hero({
             animate="visible"
             className="text-center lg:text-left"
           >
-            <motion.h2
+            <motion.h1
               variants={itemVariants}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-2 text-balance"
             >
               Why Learnify
-            </motion.h2>
+            </motion.h1>
 
             <motion.p
               variants={itemVariants}
@@ -171,14 +171,14 @@ export default function Hero({
               {/* Main mockup card */}
               <div className="relative bg-gradient-to-br from-[#102D26]/80 to-[#061A15]/80 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-[#ABAEB6]/10">
                 <div className="aspect-video bg-gradient-to-br from-[#0BA94C]/20 to-[#102D26]/40 rounded-xl mb-4 flex items-center justify-center relative overflow-hidden">
-                    <Image
-                      src="/hero-live.jpg"
-                      alt="Live learning session interface"
-                      width={500}
-                      height={300}
-                      className="rounded-xl"
-                      sizes="(max-width: 768px) 100vw, 50vw"
-                    />
+                  <Image
+                    src="/hero-live.jpg"
+                    alt="Live learning session interface"
+                    width={500}
+                    height={300}
+                    className="rounded-xl"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                  />
                   <div className="absolute top-4 left-4 bg-red-500 text-white text-xs px-2 py-1 rounded-full flex items-center gap-1">
                     <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
                     LIVE
@@ -205,33 +205,33 @@ export default function Hero({
               </div>
 
               {/* Project badge card */}
-              <div className="absolute -bottom-4 -left-4 bg-gradient-to-br from-[#102D26]/90 to-[#061A15]/90 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-[#ABAEB6]/10 max-w-[200px] hidden lg:block">       
-                  <div className="aspect-[4/3] bg-gradient-to-br from-[#0BA94C]/30 to-[#102D26]/40 rounded-lg mb-2 flex items-center justify-center">
-                    <Image
-                      src="/hero-project.jpeg"
-                      alt="Project completion badge"
-                      width={160}
-                      height={120}
-                      className="rounded-lg"
-                      sizes="200px"
-                    />
-                  </div>
+              <div className="absolute -bottom-4 -left-4 bg-gradient-to-br from-[#102D26]/90 to-[#061A15]/90 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-[#ABAEB6]/10 max-w-[200px] hidden lg:block">
+                <div className="aspect-[4/3] bg-gradient-to-br from-[#0BA94C]/30 to-[#102D26]/40 rounded-lg mb-2 flex items-center justify-center">
+                  <Image
+                    src="/hero-project.jpeg"
+                    alt="Project completion badge"
+                    width={160}
+                    height={120}
+                    className="rounded-lg"
+                    sizes="200px"
+                  />
+                </div>
                 <p className="text-xs text-white font-medium">Project Complete!</p>
                 <p className="text-xs text-[#ABAEB6]">+250 XP earned</p>
               </div>
 
               {/* XP/Gamification card */}
-              <div className="absolute -top-4 -right-4 bg-gradient-to-br from-[#102D26]/90 to-[#061A15]/90 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-[#ABAEB6]/10 max-w-[180px] hidden lg:block">   
-                  <div className="aspect-[7/5] bg-gradient-to-br from-[#0BA94C]/30 to-[#102D26]/40 rounded-lg mb-2 flex flex-col items-center justify-center p-2">
-                    <Image
-                      src="/hero-level.jpeg"
-                      alt="XP and level progress"
-                      width={140}
-                      height={100}
-                      className="rounded-lg"
-                      sizes="180px"
-                    />
-                  </div>
+              <div className="absolute -top-4 -right-4 bg-gradient-to-br from-[#102D26]/90 to-[#061A15]/90 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-[#ABAEB6]/10 max-w-[180px] hidden lg:block">
+                <div className="aspect-[7/5] bg-gradient-to-br from-[#0BA94C]/30 to-[#102D26]/40 rounded-lg mb-2 flex flex-col items-center justify-center p-2">
+                  <Image
+                    src="/hero-level.jpeg"
+                    alt="XP and level progress"
+                    width={140}
+                    height={100}
+                    className="rounded-lg"
+                    sizes="180px"
+                  />
+                </div>
                 <div className="flex items-center justify-between text-xs">
                   <span className="text-white font-medium">Level 12</span>
                   <span className="text-[#0BA94C]">2,450 XP</span>
