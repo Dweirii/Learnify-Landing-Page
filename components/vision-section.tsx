@@ -37,7 +37,7 @@ export default function VisionSection({
 }: VisionSectionProps) {
   return (
     <section
-      className={`relative py-16 md:py-24 bg-transprent overflow-hidden ${className}`}
+      className={`relative py-16 md:py-24 bg-transparent overflow-hidden ${className}`}
       aria-labelledby="vision-heading"
     >
       {/* Subtle background accent */}

@@ -71,7 +71,7 @@ export default function Footer() {
                 <Youtube className="w-5 h-5" />
               </a>
               <a
-                href="https://instagram.com/learnifyjo.com"
+                href="https://instagram.com/learnifyjo"
                 target="_blank"
                 rel="noreferrer noopener"
                 aria-label="Follow us on Instagram"
@@ -94,7 +94,7 @@ export default function Footer() {
         <div className="border-t border-white/10 mt-8 pt-6">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm text-white/60">
             <span>© {currentYear} Learnify. All rights reserved.</span>
-            
+
             <span className="text-white/60">
               Built with <span className="text-[#0BA94C]">passion</span> by{" "}
               <a

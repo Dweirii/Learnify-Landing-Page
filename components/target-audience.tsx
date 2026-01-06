@@ -23,59 +23,42 @@ interface TargetAudienceProps {
 const audienceSegments: AudienceSegment[] = [
   {
     icon: GraduationCap,
-    title: "Future Achievers",
-    description:
-      "University students looking to learn, grow, and share knowledge while building skills that matter for their future.",
+    title: "University students",
+    description: "Students looking to bridge the gap between their academic studies and the job market.",
   },
   {
     icon: TrendingUp,
-    title: "Growth Seekers",
-    description:
-      "Ambitious individuals eager to level up with practical skills, hands-on learning, and real-world experience.",
-  },
-  {
-    icon: Share2,
-    title: "Knowledge Sharers",
-    description:
-      "Tutors, content creators, and experts who want to inspire others by turning their expertise into impactful lessons.",
-  },
-  {
-    icon: Compass,
-    title: "Pathfinders",
-    description:
-      "Learners who seek guidance for themselves but also love helping others, supporting peers, sharing advice, and offering the encouragement people need to move forward.",
+    title: "Fresh graduates",
+    description: "New graduates seeking to acquire practical skills and hands-on experience.",
   },
   {
     icon: Network,
-    title: "Connectors",
-    description:
-      "Community-driven learners who want to meet new people, build relationships, and grow by connecting with others in collaborative spaces.",
+    title: "Self-learners",
+    description: "Individuals passionate about learning new fields and growing their knowledge independently.",
+  },
+  {
+    icon: Share2,
+    title: "Industry professionals",
+    description: "Experts who want to share their skills and give back to the learning community.",
   },
   {
     icon: Users,
-    title: "Education Leaders",
-    description:
-      "Universities, societies, and educational initiatives seeking a platform to connect, empower, and support learners.",
+    title: "Educators",
+    description: "Teachers and mentors looking for modern ways to engage with the next generation of learners.",
   },
 ]
 
 export default function TargetAudience({
-  title = "Target Audience",
-  subtitle = "Who is Learnify for?",
+  title = "Who is Learnify for",
+  subtitle = "",
   ctaText = "Ready to be one of us?",
   onCtaClick,
 }: TargetAudienceProps) {
   const [showAll, setShowAll] = useState(false)
   const initialSegmentsCount = 3
   const visibleSegments = showAll ? audienceSegments : audienceSegments.slice(0, initialSegmentsCount)
-  
+
   // Debug logging
-  console.log('Target Audience Debug:', {
-    showAll,
-    totalSegments: audienceSegments.length,
-    visibleCount: visibleSegments.length,
-    visibleTitles: visibleSegments.map(s => s.title)
-  })
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -125,7 +108,7 @@ export default function TargetAudience({
           </motion.p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
           {visibleSegments.map((segment, index) => {
             const IconComponent = segment.icon
             return (
@@ -134,18 +117,15 @@ export default function TargetAudience({
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group bg-[#102D26]/40 backdrop-blur-sm border border-[#0BA94C]/20 rounded-xl p-6 hover:border-[#0BA94C]/40 transition-all duration-300 hover:bg-[#102D26]/60 min-h-[120px]"
+                className="flex items-center gap-4 bg-[#102D26]/30 border border-white/5 rounded-2xl p-6 hover:border-[#0BA94C]/30 transition-all duration-300"
               >
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-[#0BA94C]/10 rounded-lg flex items-center justify-center group-hover:bg-[#0BA94C]/20 transition-colors duration-300">
-                    <IconComponent className="w-6 h-6 text-[#0BA94C]" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-[#0BA94C] transition-colors duration-300">
-                      {segment.title}
-                    </h3>
-                    <p className="text-[#ABAEB6] text-sm leading-relaxed text-pretty">{segment.description}</p>
-                  </div>
+                <div className="flex-shrink-0 w-10 h-10 bg-[#0BA94C]/10 rounded-full flex items-center justify-center">
+                  <IconComponent className="w-5 h-5 text-[#0BA94C]" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-semibold text-white">
+                    {segment.title}
+                  </h3>
                 </div>
               </motion.div>
             )

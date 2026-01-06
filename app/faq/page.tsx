@@ -2,30 +2,11 @@
 
 import { useState } from "react"
 import Navbar from "@/components/navbar"
+import Link from "next/link"
 import { ChevronDownIcon } from "@heroicons/react/24/outline"
 import Footer from "@/components/footer"
 
 const faqData = [
-  {
-    question: "When will Learnify officially launch?",
-    answer:
-      "After launching the Learnify MVP in February 2025, we are currently working on improving the platform's performance and features. You can join us today to be among the first to experience Learnify as we roll out the full launch.",
-  },
-  {
-    question: "How does the gamified system work?",
-    answer:
-      "We believe that healthy competition is a powerful motivator for both learners and streamers. On Learnify, you earn points, badges, and achievements through your contributions, progress, and active participation. This system keeps you motivated, makes learning fun, and gives you recognition within the platform.",
-  },
-  {
-    question: "Do I need prior experience to join?",
-    answer:
-      "Not at all. Whether you are a beginner or advanced, Learnify is for everyone to gain experience in fields you are passionate about, share your knowledge and skills, or even learn together with others.",
-  },
-  {
-    question: "How do I become a streamer on Learnify?",
-    answer:
-      "If you are interested in sharing your knowledge or skills, simply sign up for free and follow the steps outlined in our Features page under Live Sessions.",
-  },
   {
     question: "What makes Learnify different from other learning platforms?",
     answer:
@@ -35,6 +16,26 @@ const faqData = [
     question: "Is Learnify free to use?",
     answer:
       "Yes. Learnify follows a freemium model you can access live sessions and learning content for free. Premium features and subscription plans will be available soon at affordable prices.",
+  },
+  {
+    question: "How does the gamified system work?",
+    answer:
+      "We believe that healthy competition is a powerful motivator for both learners and streamers. On Learnify, you earn points, badges, and achievements through your contributions, progress, and active participation. This system keeps you motivated, makes learning fun, and gives you recognition within the platform.",
+  },
+  {
+    question: "How do I become a streamer on Learnify?",
+    answer:
+      "If you are interested in sharing your knowledge or skills, simply sign up for free and follow the steps outlined in our Features page under Live Sessions.",
+  },
+  {
+    question: "Do I need prior experience to join?",
+    answer:
+      "Not at all. Whether you are a beginner or advanced, Learnify is for everyone to gain experience in fields you are passionate about, share your knowledge and skills, or even learn together with others.",
+  },
+  {
+    question: "When will Learnify officially launch?",
+    answer:
+      "After launching the Learnify MVP in February 2025, we are currently working on improving the platform's performance and features. You can join us today to be among the first to experience Learnify as we roll out the full launch.",
   },
   {
     question: "How do I know which content or skill is right for me?",
@@ -72,16 +73,14 @@ function FAQItem({
       >
         <h3 className="text-lg md:text-xl font-semibold text-white text-balance pr-4">{question}</h3>
         <ChevronDownIcon
-          className={`w-5 h-5 md:w-6 md:h-6 text-[#0BA94C] transition-transform duration-300 flex-shrink-0 ${
-            isOpen ? "rotate-180" : ""
-          }`}
+          className={`w-5 h-5 md:w-6 md:h-6 text-[#0BA94C] transition-transform duration-300 flex-shrink-0 ${isOpen ? "rotate-180" : ""
+            }`}
         />
       </button>
 
       <div
-        className={`overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        }`}
+        className={`overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          }`}
       >
         <div className="px-4 md:px-6 pb-4 md:pb-6">
           <div className="h-px bg-gradient-to-r from-transparent via-[#0BA94C]/30 to-transparent mb-4"></div>
@@ -122,15 +121,6 @@ export default function FAQPage() {
               onToggle={() => toggleItem(index)}
             />
           ))}
-        </div>
-
-        <div className="text-center mt-12 md:mt-16 pt-8">
-          <div className="bg-white/5 backdrop-blur-sm border border-[#0BA94C]/20 rounded-xl p-6 md:p-8 max-w-2xl mx-auto">
-            <p className="text-[#ABAEB6] leading-relaxed text-sm md:text-base">
-              Still curious? If you didn't find the answers you are looking for, don't hesitate to reach us anytime
-              either at our social media or by email.
-            </p>
-          </div>
         </div>
       </main>
       <Footer />

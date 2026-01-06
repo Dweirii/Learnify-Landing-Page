@@ -9,6 +9,7 @@ import AchievementsSection from "@/components/achievements-section"
 import CtaJoin from "@/components/cta-join"
 import Footer from "@/components/footer"
 import UniversitySupport from "@/components/university-support"
+import NvidiaSupport from "@/components/nvidia-support"
 
 export default function HomePage() {
   return (
@@ -47,6 +48,7 @@ export default function HomePage() {
         </div>
       </div>
       <TargetAudience />
+      <AchievementsSection />
       <div className="w-full px-4">
         <div className="flex items-center justify-center mb-16 max-w-7xl mx-auto">
           <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-white/10"></div>
@@ -62,15 +64,15 @@ export default function HomePage() {
           <div className="flex-1 h-px bg-gradient-to-l from-transparent via-white/20 to-white/10"></div>
         </div>
       </div>
-      <AchievementsSection />
+      <CtaJoin />
       <div className="w-full px-4">
-        <div className="flex items-center justify-center my-10 max-w-7xl mx-auto">
+        <div className="flex items-center justify-center mt-10 max-w-7xl mx-auto">
           <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-white/10"></div>
           <div className="mx-4 w-2 h-2 bg-[#0BA94C] rounded-full animate-pulse"></div>
           <div className="flex-1 h-px bg-gradient-to-l from-transparent via-white/20 to-white/10"></div>
         </div>
       </div>
-      <CtaJoin />
+      <NvidiaSupport />
       <div className="w-full px-4">
         <div className="flex items-center justify-center mt-10 max-w-7xl mx-auto">
           <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-white/10"></div>

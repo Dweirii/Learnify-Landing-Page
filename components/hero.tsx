@@ -53,12 +53,27 @@ const imageVariants: Variants = {
 }
 
 export default function Hero({
-  overview = "The first platform in the MENA to combine live learning, project-based tracks, gamification, and community in one place to bridge the skill gap.",
+  overview,
   ctaHref = "#join",
   secondaryHref = "/features",
   images,
   className = "bg-transparent",
 }: HeroProps) {
+  const defaultOverview = (
+    <div className="space-y-4">
+      <p>
+        Learnify is an interactive live-streaming educational platform designed to bridge the gap between academic learning and real job-market skills in the Arab world.
+      </p>
+      <p>
+        It delivers a modern learning experience built on real-time interaction, practical knowledge, and a strong learning community.
+      </p>
+      <p>
+        Learnify enables talented students and industry experts to host live sessions across different fields, creating meaningful engagement between instructors and learners — aligned with today’s digital learning preferences.
+      </p>
+    </div>
+  )
+
+  const displayOverview = overview || defaultOverview
   return (
     <section
       aria-labelledby="hero-heading"
@@ -74,21 +89,26 @@ export default function Hero({
             animate="visible"
             className="text-center lg:text-left"
           >
-            {/* Tagline */}
             <motion.h2
               variants={itemVariants}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 text-balance"
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-2 text-balance"
             >
-              Learn live. <span className="text-[#0BA94C]">Build  real.</span> Level up.
+              Why Learnify
             </motion.h2>
 
-            {/* Overview */}
             <motion.p
+              variants={itemVariants}
+              className="text-lg md:text-xl font-semibold text-[#0BA94C] mb-6"
+            >
+              Built by Learners, for the Future of Skills
+            </motion.p>
+
+            <motion.div
               variants={itemVariants}
               className="text-base lg:text-lg text-[#ABAEB6] leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0 text-pretty"
             >
-              {overview}
-            </motion.p>
+              {displayOverview}
+            </motion.div>
 
             {/* Feature bullets */}
             <motion.div variants={itemVariants} className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8">
@@ -128,9 +148,8 @@ export default function Hero({
               </Button>
             </motion.div>
 
-            {/* Trust hint */}
             <motion.p variants={itemVariants} className="text-sm text-[#B3B3B3] italic">
-              Built by engineers for engineers.
+              Built by Learners, for the Future of Skills
             </motion.p>
 
             {/* Stats row */}
@@ -167,7 +186,21 @@ export default function Hero({
                 </div>
                 <div className="flex items-center justify-between text-sm">
                   <span className="text-white font-medium hidden sm:block">Live Violin Lesson – Interactive Music Streaming Session</span>
-                  <span className="text-[#ABAEB6]">127 watching</span>
+                  <div className="flex items-center gap-1.5 text-[#ABAEB6]">
+                    <span className="flex items-center gap-1">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        className="w-4 h-4"
+                      >
+                        <path d="M10 12.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
+                        <path fillRule="evenodd" d="M.664 10.59a1.651 1.651 0 010-1.186A10.004 10.004 0 0110 3c4.257 0 7.893 2.66 9.336 6.41.147.381.146.804 0 1.186A10.004 10.004 0 0110 17c-4.257 0-7.893-2.66-9.336-6.41zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd" />
+                      </svg>
+                      127
+                    </span>
+                    <span>viewers</span>
+                  </div>
                 </div>
               </div>
 

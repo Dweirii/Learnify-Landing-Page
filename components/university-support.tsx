@@ -26,7 +26,7 @@ export default function UniversitySupport() {
           <figure className="group text-center">
             <div className="relative overflow-hidden rounded-2xl bg-white/5 border border-white/10 p-8 md:p-10 backdrop-blur-sm transition-colors duration-300 hover:bg-white/10 hover:border-white/20">
               <Image
-                src="/university/University_of_Jordan_Logo.png"
+                src="/university/University-of-Jordan-Logo.png"
                 alt="University of Jordan logo"
                 width={260}
                 height={120}
