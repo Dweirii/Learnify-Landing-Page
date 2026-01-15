@@ -15,9 +15,9 @@ export const metadata: Metadata = {
   description:
     'Learnify is a LiveStream platform for live learning, project-based tracks, gamification, and community. Bridging the skill gap in the Arab world.',
   keywords: ['Learnify', 'Live Learning', 'MENA EdTech', 'Project-Based Learning', 'Skill Gap', 'Arab Learners'],
-  authors: [{ name: 'Learnify Team' }],
+  authors: [{ name: 'Learnify Technologies, Inc. Team' }],
   creator: 'Zaid Dweiri',
-  publisher: 'Learnify',
+  publisher: 'Learnify Technologies, Inc.',
   formatDetection: {
     email: false,
     address: false,

@@ -92,8 +92,11 @@ export default function Footer() {
 
         {/* Legal */}
         <div className="border-t border-white/10 mt-8 pt-6">
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 text-sm text-white/60">
-            <span>© {currentYear} Learnify. All rights reserved.</span>
+          <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 text-sm text-white/60">
+            <div className="flex flex-col gap-1">
+              <span>© {currentYear} Learnify Technologies, Inc.</span>
+              <span className="text-xs opacity-70">A Delaware C-Corporation.</span>
+            </div>
 
             <span className="text-white/60">
               Built with <span className="text-[#0BA94C]">passion</span> by{" "}
