@@ -3,7 +3,7 @@
 import { useState } from "react"
 import Navbar from "@/components/navbar"
 import Footer from "@/components/footer"
-import { Check, ArrowRight, RotateCcw } from "lucide-react"
+import { Check, ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -35,8 +35,14 @@ export default function PricingPage() {
               <TabsList className="grid w-full max-w-xl grid-cols-4 bg-white/5 border border-white/10 text-white">
                 <TabsTrigger value="free" className="data-[state=active]:bg-[#0BA94C] data-[state=active]:text-white text-white/70 hover:text-white">Free</TabsTrigger>
                 <TabsTrigger value="basic" className="data-[state=active]:bg-[#0BA94C] data-[state=active]:text-white text-white/70 hover:text-white">Basic</TabsTrigger>
-                <TabsTrigger value="premium" className="data-[state=active]:bg-[#0BA94C] data-[state=active]:text-white text-white/70 hover:text-white">Premium</TabsTrigger>
-                <TabsTrigger value="ultimate" className="data-[state=active]:bg-[#0BA94C] data-[state=active]:text-white text-white/70 hover:text-white">Ultimate</TabsTrigger>
+                <TabsTrigger value="premium" className="relative data-[state=active]:bg-[#0BA94C] data-[state=active]:text-white text-white/70 hover:text-white">
+                  Premium
+                  <span className="absolute -top-3 -right-3 bg-[#0BA94C] text-white text-[9px] px-1.5 py-0.5 rounded-full border border-black/20 shadow-sm animate-pulse">Coming Soon</span>
+                </TabsTrigger>
+                <TabsTrigger value="ultimate" className="relative data-[state=active]:bg-[#0BA94C] data-[state=active]:text-white text-white/70 hover:text-white">
+                  Ultimate
+                  <span className="absolute -top-3 -right-3 bg-[#0BA94C] text-white text-[9px] px-1.5 py-0.5 rounded-full border border-black/20 shadow-sm animate-pulse">Coming Soon</span>
+                </TabsTrigger>
               </TabsList>
             </div>
 
@@ -81,7 +87,8 @@ export default function PricingPage() {
                 <PricingCard 
                   title="Business"
                   subtitle="For Companies"
-                  price="$49.99"
+                  price="$99.98"
+                  discount={50}
                   features={[
                     "All Individual Features",
                     "Private Live Sessions (up to 20)",
@@ -145,7 +152,8 @@ export default function PricingPage() {
                 <PricingCard 
                   title="Creator"
                   subtitle="Content Creators"
-                  price="$9.99"
+                  price="$19.98"
+                  discount={50}
                   features={[
                     "Receive Donations",
                     "Allow User Subscriptions",
@@ -166,7 +174,8 @@ export default function PricingPage() {
                 <PricingCard 
                   title="Business"
                   subtitle="For Companies"
-                  price="$49.99"
+                  price="$99.98"
+                  discount={50}
                   features={[
                     "All Individual Features",
                     "Private Live Sessions (up to 20)",
@@ -187,7 +196,8 @@ export default function PricingPage() {
                 <PricingCard 
                   title="Learnify Perks+"
                   subtitle="For Viewers"
-                  price="$4.99"
+                  price="$9.98"
+                  discount={50}
                   features={[
                     "25% Discount on 3 Streamers",
                     "Support Learnify Team",
@@ -231,7 +241,9 @@ export default function PricingPage() {
                 <PricingCard 
                   title="Creator"
                   subtitle="Content Creators"
-                  price="$12.99"
+                  price="$25.98"
+                  discount={50}
+                  comingSoonPrice={true}
                   features={[
                     "All Basic Features Included",
                     "Higher Priority Support",
@@ -249,7 +261,9 @@ export default function PricingPage() {
                 <PricingCard 
                   title="Business"
                   subtitle="For Companies"
-                  price="$74.99"
+                  price="$149.98"
+                  discount={50}
+                  comingSoonPrice={true}
                   features={[
                     "All Basic Features Included",
                     "Lower Commission Rates",
@@ -267,7 +281,9 @@ export default function PricingPage() {
                 <PricingCard 
                   title="Learnify Perks+"
                   subtitle="For Viewers"
-                  price="$6.99"
+                  price="$13.98"
+                  discount={50}
+                  comingSoonPrice={true}
                   features={[
                     "30% Discount on 5 Streamers",
                     "Support Learnify Team",
@@ -311,7 +327,9 @@ export default function PricingPage() {
                 <PricingCard 
                   title="Creator"
                   subtitle="Content Creators"
-                  price="$14.99"
+                  price="$29.98"
+                  discount={50}
+                  comingSoonPrice={true}
                   features={[
                     "All Premium Features Included",
                     "Top Tier Support",
@@ -329,7 +347,9 @@ export default function PricingPage() {
                 <PricingCard 
                   title="Business"
                   subtitle="For Companies"
-                  price="$99.99"
+                  price="$199.98"
+                  discount={50}
+                  comingSoonPrice={true}
                   features={[
                     "All Premium Features Included",
                     "Lowest Commission Rates",
@@ -347,7 +367,9 @@ export default function PricingPage() {
                 <PricingCard 
                   title="Learnify Perks+"
                   subtitle="For Viewers"
-                  price="$9.99"
+                  price="$19.98"
+                  discount={50}
+                  comingSoonPrice={true}
                   features={[
                     "35% Discount on 9 Streamers",
                     "Support Learnify Team",
@@ -462,11 +484,15 @@ function PricingCard({
   buttonText, 
   highlighted = false,
   disabled = false,
+  discount,
+  comingSoonPrice = false,
   flipContent
 }: { 
   title: string, 
   subtitle?: string,
-  price: string, 
+  price: string,
+  discount?: number,
+  comingSoonPrice?: boolean,
   features: string[], 
   buttonText: string, 
   highlighted?: boolean,
@@ -486,7 +512,7 @@ function PricingCard({
       >
         {/* Front of Card */}
         <Card className={`absolute w-full h-full backface-hidden flex flex-col border-white/10 ${highlighted ? 'bg-[#0BA94C]/10 border-[#0BA94C]/50' : 'bg-white/5'} text-white`}>
-          {highlighted && (
+          {highlighted && !comingSoonPrice && (
             <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#0BA94C] text-white text-xs font-bold px-3 py-1 rounded-full z-10">
               Most Popular
             </div>
@@ -495,8 +521,34 @@ function PricingCard({
             <CardTitle className="text-2xl font-bold">{title}</CardTitle>
             {subtitle && <p className="text-sm text-[#0BA94C] font-medium mt-1">{subtitle}</p>}
             <div className="mt-2">
-              <span className="text-4xl font-bold">{price}</span>
-              <span className="text-gray-400 ml-1">/mo</span>
+              {comingSoonPrice ? (
+                <div className="flex flex-col gap-1">
+                  <div className="inline-flex items-center gap-2">
+                    <span className="inline-flex items-center gap-2 rounded-full bg-[#0BA94C]/15 border border-[#0BA94C]/30 px-3 py-1 text-sm font-semibold text-white">
+                      Coming Soon
+                    </span>
+                  </div>
+                  <div className="text-xs text-gray-400">
+                    Pricing will be revealed at launch
+                  </div>
+                </div>
+              ) : discount ? (
+                <div className="flex flex-col">
+                  <div className="flex items-center gap-2">
+                    <span className="text-4xl font-bold">${(parseFloat(price.replace('$', '')) * (1 - discount / 100)).toFixed(2)}</span>
+                    <span className="text-gray-400 ml-1">/mo</span>
+                  </div>
+                  <div className="flex items-center gap-2 mt-1">
+                     <span className="text-sm text-gray-500 line-through decoration-red-500/50">{price}</span>
+                     <span className="text-xs bg-red-500/20 text-red-400 px-2 py-0.5 rounded-full font-medium">{discount}% OFF</span>
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <span className="text-4xl font-bold">{price}</span>
+                  <span className="text-gray-400 ml-1">/mo</span>
+                </>
+              )}
             </div>
           </CardHeader>
           <CardContent className="flex-grow">
@@ -512,11 +564,11 @@ function PricingCard({
           <CardFooter>
             <Button 
               className={`w-full group ${highlighted ? 'bg-[#0BA94C] hover:bg-[#0BA94C]/90 text-white' : 'bg-white/10 hover:bg-white/20 text-white'}`}
-              disabled={disabled}
-              onClick={() => !disabled && setIsFlipped(true)}
+              disabled={disabled || comingSoonPrice}
+              onClick={() => !(disabled || comingSoonPrice) && setIsFlipped(true)}
             >
-              {disabled ? "Not Available" : "Learn More"}
-              {!disabled && <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />}
+              {disabled ? "Not Available" : comingSoonPrice ? "Coming Soon" : "Learn More"}
+              {!(disabled || comingSoonPrice) && <ArrowRight className="w-4 h-4 ml-2 transition-transform group-hover:translate-x-1" />}
             </Button>
           </CardFooter>
         </Card>
@@ -527,15 +579,6 @@ function PricingCard({
            <CardHeader className="pb-2">
             <CardTitle className="text-xl font-bold flex justify-between items-center">
               {title}
-              <button 
-                onClick={(e) => {
-                  e.stopPropagation();
-                  setIsFlipped(false);
-                }}
-                className="text-gray-400 hover:text-white transition-colors p-1"
-              >
-                <RotateCcw className="w-4 h-4" />
-              </button>
             </CardTitle>
             {flipContent?.subtitle && <p className="text-xs text-[#0BA94C] font-medium mt-1 uppercase tracking-wider">{flipContent.subtitle}</p>}
           </CardHeader>
