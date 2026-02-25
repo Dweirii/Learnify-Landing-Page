@@ -556,12 +556,22 @@ function PricingCard({
   const [isFlipped, setIsFlipped] = useState(false)
 
   return (
-    <div className={`h-[500px] perspective-1000 ${disabled ? 'opacity-70 grayscale' : ''}`}>
-      <div 
-        className={`relative w-full h-full transition-transform duration-700 transform-style-3d ${isFlipped ? 'rotate-y-180' : ''}`}
+    <div
+      className={`h-[500px] ${disabled ? 'opacity-70 grayscale' : ''}`}
+      style={{ perspective: '1000px' }}
+    >
+      <div
+        className="relative w-full h-full transition-transform duration-700"
+        style={{
+          transformStyle: 'preserve-3d',
+          transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)',
+        }}
       >
         {/* Front of Card */}
-        <Card className={`absolute w-full h-full backface-hidden flex flex-col border-white/10 ${highlighted ? 'bg-[#0BA94C]/10 border-[#0BA94C]/50' : 'bg-white/5'} text-white`}>
+        <Card
+          className={`absolute w-full h-full overflow-hidden flex flex-col border-white/10 ${highlighted ? 'bg-[#0BA94C]/10 border-[#0BA94C]/50' : 'bg-white/5'} text-white`}
+          style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden' }}
+        >
           {highlighted && !comingSoonPrice && (
             <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#0BA94C] text-white text-xs font-bold px-3 py-1 rounded-full z-10">
               Most Popular
@@ -601,7 +611,7 @@ function PricingCard({
               )}
             </div>
           </CardHeader>
-          <CardContent className="flex-grow">
+          <CardContent className="flex-grow overflow-y-auto custom-scrollbar">
             <ul className="space-y-3">
               {features.map((feature, i) => (
                 <li key={i} className="flex items-start gap-3 text-sm text-gray-300">
@@ -624,7 +634,10 @@ function PricingCard({
         </Card>
 
         {/* Back of Card */}
-        <Card className={`absolute w-full h-full backface-hidden rotate-y-180 flex flex-col bg-[#061A15] border-[#0BA94C]/30 text-white overflow-hidden`}>
+        <Card
+          className="absolute w-full h-full overflow-hidden flex flex-col bg-[#061A15] border-[#0BA94C]/30 text-white"
+          style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: 'rotateY(180deg)' }}
+        >
            <div className="absolute top-0 left-0 w-full h-1 bg-[#0BA94C]"></div>
            <CardHeader className="pb-2">
             <CardTitle className="text-xl font-bold flex justify-between items-center">
@@ -665,30 +678,6 @@ function PricingCard({
         </Card>
       </div>
       
-      <style jsx global>{`
-        .perspective-1000 {
-          perspective: 1000px;
-        }
-        .transform-style-3d {
-          transform-style: preserve-3d;
-        }
-        .backface-hidden {
-          backface-visibility: hidden;
-        }
-        .rotate-y-180 {
-          transform: rotateY(180deg);
-        }
-        .custom-scrollbar::-webkit-scrollbar {
-          width: 4px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-          background: rgba(255, 255, 255, 0.05);
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: rgba(11, 169, 76, 0.5);
-          border-radius: 2px;
-        }
-      `}</style>
     </div>
   )
 }
