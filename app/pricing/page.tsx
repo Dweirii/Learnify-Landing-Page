@@ -25,8 +25,11 @@ export default function PricingPage() {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight">
               Choose Your <span className="text-[#0BA94C]">Path</span>
             </h1>
-            <p className="text-xl text-gray-400 mb-8">
+            <p className="text-xl text-gray-400 mb-4">
               Whether you're here to share knowledge, learn, or support the community, we have a plan for you.
+            </p>
+            <p className="text-sm text-[#0BA94C]/80 font-medium">
+              Launch pricing — early subscribers lock in this rate forever.
             </p>
           </div>
 
@@ -54,10 +57,13 @@ export default function PricingPage() {
                   subtitle="Student Societies"
                   price="$0"
                   features={[
-                    "No Subscription Fee",
+                    "No Subscription Fee — Ever",
+                    "20 Hours Streaming/Month",
                     "Donations Only",
-                    "Private Live Sessions (TBD)",
-                    "Longer Live Sessions"
+                    "720p Quality",
+                    "Unlimited Viewers",
+                    "Private Sessions (Coming Soon)",
+                    "Community Support"
                   ]}
                   buttonText="Get Started"
                   highlighted={false}
@@ -72,38 +78,43 @@ export default function PricingPage() {
                   subtitle="Content Creators"
                   price="$0"
                   features={[
-                    "Limited Streaming",
-                    "Standard Quality",
-                    "Community Support"
+                    "6 Hours Streaming/Month",
+                    "Max 2 Hours Per Session",
+                    "720p Quality",
+                    "Unlimited Viewers",
+                    "Public Chat",
+                    "Community Support",
+                    "No Monetization"
                   ]}
                   buttonText="Get Started"
                   highlighted={true}
                   flipContent={{
                     subtitle: "For Individual Content Creators",
-                    body: "Made for individuals with a skill, an experience, or a story worth sharing. Creator is for passionate people, not companies, who want to teach, inspire, and grow a meaningful audience while earning from their knowledge.",
+                    body: "Made for individuals with a skill, an experience, or a story worth sharing. Start free — build your audience and see the potential. Upgrade to Basic when you're ready to earn from your knowledge.",
                     idealFor: ["Independent educators", "Skilled individuals", "Knowledge-driven creators"]
                   }}
                 />
                 <PricingCard 
                   title="Business"
                   subtitle="For Companies"
-                  price="$99.98"
+                  price="$139.98"
                   discount={50}
                   features={[
-                    "All Individual Features",
-                    "Private Live Sessions (up to 20)",
-                    "Extra Extra Long Live Sessions",
-                    "License Included",
-                    "Less Commission",
-                    "First In Learnify SEO",
-                    "Better Quality Streaming"
+                    "80 Hours Streaming/Month",
+                    "1080p Quality",
+                    "All Creator Basic Features",
+                    "20 Private Sessions/Month",
+                    "5% Audience Commission",
+                    "Priority SEO Listing",
+                    "Up to 3 Team Seats",
+                    "Commercial License"
                   ]}
                   buttonText="Go Business"
                   highlighted={false}
                   disabled={true}
                   flipContent={{
                     subtitle: "For Companies & Professional Organizations",
-                    body: "Designed for companies that need a reliable, scalable, and high-quality learning infrastructure. Business unlocks Learnify’s advanced technology to deliver professional-grade live experiences, private sessions, and branded learning environments.",
+                    body: "Designed for companies that need a reliable, scalable, and high-quality learning infrastructure. Business unlocks Learnify's advanced technology to deliver professional-grade live experiences, private sessions, and branded learning environments.",
                     idealFor: ["Companies", "Training providers", "Professional organizations"]
                   }}
                 />
@@ -112,15 +123,16 @@ export default function PricingPage() {
                   subtitle="For Viewers"
                   price="$0"
                   features={[
-                    "Access to Community",
-                    "Standard Viewing",
-                    "Basic Profile"
+                    "720p Viewing Quality",
+                    "Public Chat",
+                    "Basic Profile",
+                    "Standard Experience"
                   ]}
                   buttonText="Join Free"
                   highlighted={false}
                   flipContent={{
                     subtitle: "For Viewers Who Want More",
-                    body: "Learnify Perks+ is for viewers who want a cleaner, richer experience, no ads, exclusive discounts, and early access to special content. More than watching, Perks+ members become part of a movement that supports creators, students, and meaningful learning.",
+                    body: "Learnify Perks+ is for viewers who want a cleaner, richer experience — no ads, better quality, and exclusive perks. More than watching, Perks+ members become part of a movement that supports creators and meaningful learning.",
                     idealFor: ["Active viewers", "Learning supporters", "Community-driven members"]
                   }}
                 />
@@ -135,10 +147,13 @@ export default function PricingPage() {
                   subtitle="Student Societies"
                   price="$0"
                   features={[
-                    "No Subscription Fee",
+                    "No Subscription Fee — Ever",
+                    "20 Hours Streaming/Month",
                     "Donations Only",
-                    "Private Live Sessions (TBD)",
-                    "Longer Live Sessions"
+                    "720p Quality",
+                    "Unlimited Viewers",
+                    "Private Sessions (Coming Soon)",
+                    "Community Support"
                   ]}
                   buttonText="Get Started"
                   highlighted={false}
@@ -155,61 +170,72 @@ export default function PricingPage() {
                   price="$19.98"
                   discount={50}
                   features={[
+                    "40 Hours Streaming/Month",
+                    "No Session Length Limit",
+                    "720p Quality",
+                    "Unlimited Viewers",
                     "Receive Donations",
-                    "Allow User Subscriptions",
-                    "Private Live Sessions (up to 5)",
-                    "Extra Long Live Sessions",
-                    "Recorded Live Sessions",
-                    "Downloadable Live Sessions",
-                    "XP Booster"
+                    "Audience Subscriptions ($1.99/mo)",
+                    "5 Private Sessions/Month",
+                    "Recording (30-Day, 10 hrs storage)",
+                    "Downloadable Recordings",
+                    "Basic Analytics",
+                    "XP Multiplier (1.5x)",
+                    "Email Support (48hr)"
                   ]}
                   buttonText="Go Creator"
                   highlighted={true}
                   flipContent={{
                     subtitle: "For Individual Content Creators",
-                    body: "Made for individuals with a skill, an experience, or a story worth sharing. Creator is for passionate people, not companies, who want to teach, inspire, and grow a meaningful audience while earning from their knowledge.",
+                    body: "Made for individuals with a skill, an experience, or a story worth sharing. Creator Basic unlocks full monetization — receive donations, build a subscriber base, run private sessions, and earn from your knowledge.",
                     idealFor: ["Independent educators", "Skilled individuals", "Knowledge-driven creators"]
                   }}
                 />
                 <PricingCard 
                   title="Business"
                   subtitle="For Companies"
-                  price="$99.98"
+                  price="$139.98"
                   discount={50}
                   features={[
-                    "All Individual Features",
-                    "Private Live Sessions (up to 20)",
-                    "Extra Extra Long Live Sessions",
-                    "License Included",
-                    "Less Commission",
-                    "First In Learnify SEO",
-                    "Better Quality Streaming"
+                    "80 Hours Streaming/Month",
+                    "1080p Quality",
+                    "All Creator Basic Features",
+                    "Audience Subscriptions ($4.99/mo)",
+                    "20 Private Sessions/Month",
+                    "5% Audience Commission",
+                    "Recording (90-Day, 50 hrs storage)",
+                    "Advanced Analytics",
+                    "Priority SEO Listing",
+                    "Commercial License",
+                    "Up to 3 Team Seats",
+                    "Priority Email Support (24hr)"
                   ]}
                   buttonText="Go Business"
                   highlighted={false}
                   flipContent={{
                     subtitle: "For Companies & Professional Organizations",
-                    body: "Designed for companies that need a reliable, scalable, and high-quality learning infrastructure. Business unlocks Learnify’s advanced technology to deliver professional-grade live experiences, private sessions, and branded learning environments.",
+                    body: "Designed for companies that need a reliable, scalable, and high-quality learning infrastructure. Business unlocks advanced technology for professional-grade live experiences, private sessions, and branded learning environments.",
                     idealFor: ["Companies", "Training providers", "Professional organizations"]
                   }}
                 />
                 <PricingCard 
                   title="Learnify Perks+"
                   subtitle="For Viewers"
-                  price="$9.98"
+                  price="$5.98"
                   discount={50}
                   features={[
-                    "25% Discount on 3 Streamers",
-                    "Support Learnify Team",
-                    "Better Quality Viewing",
-                    "Save 1 Live Stream",
-                    "XP Booster (3 days)"
+                    "1080p Viewing Quality",
+                    "Ad-Free Viewing",
+                    "Supporter Badge (Profile & Chat)",
+                    "Save 1 Stream (30-Day Access)",
+                    "Early Stream Notifications",
+                    "XP Booster (2x for 3 Days/Month)"
                   ]}
                   buttonText="Become a Member"
                   highlighted={false}
                   flipContent={{
                     subtitle: "For Viewers Who Want More",
-                    body: "Learnify Perks+ is for viewers who want a cleaner, richer experience, no ads, exclusive discounts, and early access to special content. More than watching, Perks+ members become part of a movement that supports creators, students, and meaningful learning.",
+                    body: "Learnify Perks+ is for viewers who want a cleaner, richer experience — no ads, better quality, and exclusive perks. Support the creators and community you love for less than a coffee a month.",
                     idealFor: ["Active viewers", "Learning supporters", "Community-driven members"]
                   }}
                 />
@@ -224,17 +250,20 @@ export default function PricingPage() {
                   subtitle="Student Societies"
                   price="$0"
                   features={[
-                    "No Subscription Fee",
+                    "No Subscription Fee — Ever",
+                    "20 Hours Streaming/Month",
                     "Donations Only",
-                    "Private Live Sessions (TBD)",
-                    "Longer Live Sessions"
+                    "720p Quality",
+                    "Unlimited Viewers",
+                    "Private Sessions (Coming Soon)",
+                    "Community Support"
                   ]}
                   buttonText="Get Started"
                   highlighted={false}
                   disabled={true}
                   flipContent={{
                     subtitle: "For Student Communities & Non-Profit Initiatives",
-                    body: "Built for student societies, youth communities, and initiatives where impact comes before profit. Community exists to empower learning, collaboration, and knowledge sharing without financial pressure because education should stay accessible.",
+                    body: "Built for student societies, youth communities, and initiatives where impact comes before profit. Community exists to empower learning, collaboration, and knowledge sharing without financial pressure.",
                     idealFor: ["Student societies", "Youth initiatives", "Non-profit learning communities"]
                   }}
                 />
@@ -246,57 +275,66 @@ export default function PricingPage() {
                   comingSoonPrice={true}
                   features={[
                     "All Basic Features Included",
-                    "Higher Priority Support",
-                    "Extended Recording Storage",
-                    "Enhanced Analytics"
+                    "80 Hours Streaming/Month",
+                    "1080p Quality",
+                    "15 Private Sessions/Month",
+                    "Recording (90-Day, 50 hrs storage)",
+                    "Enhanced Analytics",
+                    "XP Multiplier (2x)",
+                    "Priority Email Support (24hr)"
                   ]}
                   buttonText="Upgrade Creator"
                   highlighted={true}
                   flipContent={{
-                    subtitle: "For Individual Content Creators",
-                    body: "Made for individuals with a skill, an experience, or a story worth sharing. Creator is for passionate people, not companies, who want to teach, inspire, and grow a meaningful audience while earning from their knowledge.",
-                    idealFor: ["Independent educators", "Skilled individuals", "Knowledge-driven creators"]
+                    subtitle: "For Growing Content Creators",
+                    body: "Creator Premium takes your content to the next level — 1080p streaming, extended recording storage, 15 private sessions monthly, and enhanced analytics to truly understand and grow your audience.",
+                    idealFor: ["Growing educators", "Established creators", "High-volume streamers"]
                   }}
                 />
                 <PricingCard 
                   title="Business"
                   subtitle="For Companies"
-                  price="$149.98"
+                  price="$179.98"
                   discount={50}
                   comingSoonPrice={true}
                   features={[
                     "All Basic Features Included",
-                    "Lower Commission Rates",
-                    "Priority SEO Listing",
-                    "Advanced Analytics Dashboard"
+                    "160 Hours Streaming/Month",
+                    "4% Audience Commission",
+                    "40 Private Sessions/Month",
+                    "Recording (180-Day, 200 hrs storage)",
+                    "Advanced Analytics Dashboard",
+                    "Up to 5 Team Seats",
+                    "Dedicated Support Manager"
                   ]}
                   buttonText="Upgrade Business"
                   highlighted={false}
                   flipContent={{
-                    subtitle: "For Companies & Professional Organizations",
-                    body: "Designed for companies that need a reliable, scalable, and high-quality learning infrastructure. Business unlocks Learnify’s advanced technology to deliver professional-grade live experiences, private sessions, and branded learning environments.",
-                    idealFor: ["Companies", "Training providers", "Professional organizations"]
+                    subtitle: "For Scaling Companies",
+                    body: "Business Premium scales with your organization — double the streaming hours, lower commission rates, more private sessions, and a dedicated support manager who knows your account.",
+                    idealFor: ["Growing companies", "Training providers", "Professional organizations"]
                   }}
                 />
                 <PricingCard 
                   title="Learnify Perks+"
                   subtitle="For Viewers"
-                  price="$13.98"
+                  price="$9.98"
                   discount={50}
                   comingSoonPrice={true}
                   features={[
-                    "30% Discount on 5 Streamers",
-                    "Support Learnify Team",
-                    "Better Quality Viewing",
-                    "Save up to 2 Live Streams",
-                    "XP Booster (1 week)"
+                    "All Basic Features Included",
+                    "Save 2 Streams (90-Day Access)",
+                    "30% Off 5 Creator Subscriptions",
+                    "Custom Profile Frame",
+                    "Exclusive Chat Emotes",
+                    "XP Booster (2x for 1 Week/Month)"
                   ]}
                   buttonText="Upgrade Perks"
                   highlighted={false}
                   flipContent={{
-                    subtitle: "For Viewers Who Want More",
-                    body: "Learnify Perks+ is for viewers who want a cleaner, richer experience, no ads, exclusive discounts, and early access to special content. More than watching, Perks+ members become part of a movement that supports creators, students, and meaningful learning.",
-                    idealFor: ["Active viewers", "Learning supporters", "Community-driven members"]
+                    subtitle: "For Dedicated Viewers",
+                    body: "Perks+ Premium rewards your loyalty — save more streams, get discounts on creator subscriptions, and stand out with a custom profile frame and exclusive chat emotes.",
+                    idealFor: ["Dedicated viewers", "Multi-creator fans", "Community champions"]
                   }}
                 />
               </div>
@@ -310,80 +348,92 @@ export default function PricingPage() {
                   subtitle="Student Societies"
                   price="$0"
                   features={[
-                    "No Subscription Fee",
+                    "No Subscription Fee — Ever",
+                    "20 Hours Streaming/Month",
                     "Donations Only",
-                    "Private Live Sessions (TBD)",
-                    "Longer Live Sessions"
+                    "720p Quality",
+                    "Unlimited Viewers",
+                    "Private Sessions (Coming Soon)",
+                    "Community Support"
                   ]}
                   buttonText="Get Started"
                   highlighted={false}
                   disabled={true}
                   flipContent={{
                     subtitle: "For Student Communities & Non-Profit Initiatives",
-                    body: "Built for student societies, youth communities, and initiatives where impact comes before profit. Community exists to empower learning, collaboration, and knowledge sharing without financial pressure because education should stay accessible.",
+                    body: "Built for student societies, youth communities, and initiatives where impact comes before profit. Community exists to empower learning, collaboration, and knowledge sharing without financial pressure.",
                     idealFor: ["Student societies", "Youth initiatives", "Non-profit learning communities"]
                   }}
                 />
                 <PricingCard 
                   title="Creator"
                   subtitle="Content Creators"
-                  price="$29.98"
+                  price="$49.98"
                   discount={50}
                   comingSoonPrice={true}
                   features={[
                     "All Premium Features Included",
-                    "Top Tier Support",
+                    "Unlimited Streaming Hours",
+                    "Unlimited Private Sessions",
                     "Unlimited Recording Storage",
-                    "Maximum XP Boosts"
+                    "Full Analytics Suite",
+                    "Rotating Discovery Placement",
+                    "XP Multiplier (3x)",
+                    "Same-Day Support"
                   ]}
                   buttonText="Go Ultimate"
                   highlighted={true}
                   flipContent={{
-                    subtitle: "For Individual Content Creators",
-                    body: "Made for individuals with a skill, an experience, or a story worth sharing. Creator is for passionate people, not companies, who want to teach, inspire, and grow a meaningful audience while earning from their knowledge.",
-                    idealFor: ["Independent educators", "Skilled individuals", "Knowledge-driven creators"]
+                    subtitle: "For Top-Tier Creators",
+                    body: "Creator Ultimate removes every limit. Unlimited hours, unlimited private sessions, unlimited storage — plus rotating discovery placement to grow your audience and same-day support when you need it most.",
+                    idealFor: ["Professional educators", "Full-time streamers", "Top-tier content creators"]
                   }}
                 />
                 <PricingCard 
                   title="Business"
                   subtitle="For Companies"
-                  price="$199.98"
+                  price="$299.98"
                   discount={50}
                   comingSoonPrice={true}
                   features={[
                     "All Premium Features Included",
-                    "Lowest Commission Rates",
-                    "Top SEO Placement",
-                    "White-glove Support"
+                    "Unlimited Streaming Hours",
+                    "3% Audience Commission",
+                    "Unlimited Private Sessions",
+                    "Unlimited Recording Storage",
+                    "Permanent Featured Placement",
+                    "Unlimited Team Seats",
+                    "White-Glove Support",
+                    "Dedicated Setup Call"
                   ]}
                   buttonText="Go Ultimate"
                   highlighted={false}
                   flipContent={{
-                    subtitle: "For Companies & Professional Organizations",
-                    body: "Designed for companies that need a reliable, scalable, and high-quality learning infrastructure. Business unlocks Learnify’s advanced technology to deliver professional-grade live experiences, private sessions, and branded learning environments.",
-                    idealFor: ["Companies", "Training providers", "Professional organizations"]
+                    subtitle: "For Enterprise Organizations",
+                    body: "Business Ultimate is built for organizations that demand the best. Lowest commission rates, unlimited everything, permanent featured discovery placement, and white-glove support with a dedicated onboarding call.",
+                    idealFor: ["Enterprise companies", "Large training organizations", "Corporate academies"]
                   }}
                 />
                 <PricingCard 
                   title="Learnify Perks+"
                   subtitle="For Viewers"
-                  price="$19.98"
+                  price="$15.98"
                   discount={50}
                   comingSoonPrice={true}
                   features={[
-                    "35% Discount on 9 Streamers",
-                    "Support Learnify Team",
-                    "Save up to 3 Live Streams",
+                    "All Premium Features Included",
+                    "Save 3 Streams (Unlimited Access)",
+                    "35% Off 9 Creator Subscriptions",
                     "Special Profile Character",
-                    "Different Super Chat Style",
-                    "XP Booster (1 month)"
+                    "Unique Super Chat Style",
+                    "XP Booster (3x Full Month)"
                   ]}
                   buttonText="Go Ultimate"
                   highlighted={false}
                   flipContent={{
-                    subtitle: "For Viewers Who Want More",
-                    body: "Learnify Perks+ is for viewers who want a cleaner, richer experience, no ads, exclusive discounts, and early access to special content. More than watching, Perks+ members become part of a movement that supports creators, students, and meaningful learning.",
-                    idealFor: ["Active viewers", "Learning supporters", "Community-driven members"]
+                    subtitle: "For Ultimate Supporters",
+                    body: "Perks+ Ultimate is for viewers who are all in. Maximum XP all month, discounts on 9 creator subscriptions, a special profile character, and a Super Chat style that makes you impossible to miss.",
+                    idealFor: ["Super fans", "Power viewers", "Platform champions"]
                   }}
                 />
             </div>
@@ -422,18 +472,18 @@ export default function PricingPage() {
                         <tr className="border-b border-white/5">
                           <td className="px-4 py-3 font-medium text-[#0BA94C]">Premium</td>
                           <td className="px-4 py-3">$2.49/mo</td>
-                          <td className="px-4 py-3">$7.49/mo</td>
+                          <td className="px-4 py-3">$4.99/mo</td>
                         </tr>
                         <tr>
                           <td className="px-4 py-3 font-medium text-[#0BA94C]">Ultimate</td>
                           <td className="px-4 py-3">$2.99/mo</td>
-                          <td className="px-4 py-3">$9.99/mo</td>
+                          <td className="px-4 py-3">$4.99/mo</td>
                         </tr>
                       </tbody>
                     </table>
                   </div>
                   <p className="mt-4 text-xs text-gray-500">
-                    * Community streamers are free to follow. Learnify Perks accounts cannot receive subscriptions.
+                    * Community streamers are free to follow. Learnify Perks+ accounts cannot receive subscriptions.
                   </p>
                 </CardContent>
               </Card>
@@ -461,7 +511,7 @@ export default function PricingPage() {
                       <span className="font-mono text-[#0BA94C]">$1.00</span>
                     </div>
                     <div className="flex justify-between items-center pt-2 opacity-50">
-                      <span>Learnify Perks Accounts</span>
+                      <span>Learnify Perks+ Accounts</span>
                       <span className="font-mono text-gray-500">N/A</span>
                     </div>
                   </div>
