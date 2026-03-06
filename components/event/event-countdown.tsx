@@ -41,7 +41,7 @@ function CountdownUnit({ value, label, index }: { value: number; label: string; 
         {/* outer glow */}
         <div className="absolute inset-0 rounded-2xl bg-[#0BA94C]/20 blur-xl scale-110 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
         {/* card */}
-        <div className="relative w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-2xl bg-[#102D26]/80 border border-white/10 backdrop-blur-md flex items-center justify-center overflow-hidden shadow-xl group-hover:border-[#0BA94C]/40 transition-all duration-300">
+        <div className="relative w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-2xl bg-[#102D26]/80 border border-white/10 backdrop-blur-md flex items-center justify-center overflow-hidden shadow-xl group-hover:border-[#0BA94C]/40 transition-all duration-300">
           {/* top shine */}
           <div className="absolute inset-x-0 top-0 h-[40%] bg-gradient-to-b from-white/[0.06] to-transparent" />
           {/* bottom accent */}
@@ -51,7 +51,7 @@ function CountdownUnit({ value, label, index }: { value: number; label: string; 
             initial={{ y: -16, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="text-3xl sm:text-4xl md:text-5xl font-black text-white tabular-nums tracking-tight"
+            className="text-2xl sm:text-3xl md:text-4xl font-black text-white tabular-nums tracking-tight"
           >
             {pad(value)}
           </motion.span>
@@ -91,10 +91,10 @@ export default function EventCountdown() {
 
   if (!mounted) {
     return (
-      <div className="flex flex-row justify-center gap-4 sm:gap-6 md:gap-8 py-4">
+      <div className="flex flex-row justify-center gap-2 sm:gap-4 md:gap-6 py-4">
         {["Days", "Hours", "Mins", "Secs"].map((label) => (
           <div key={label} className="flex flex-col items-center gap-3">
-            <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 rounded-2xl bg-[#102D26]/50 border border-white/5 animate-pulse" />
+            <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 rounded-2xl bg-[#102D26]/50 border border-white/5 animate-pulse" />
             <span className="text-[10px] sm:text-xs font-bold text-[#0BA94C]/40 uppercase tracking-widest">{label}</span>
           </div>
         ))}
@@ -124,7 +124,7 @@ export default function EventCountdown() {
   ]
 
   return (
-    <div className="flex flex-row items-center gap-2 sm:gap-4 md:gap-6 py-2">
+    <div className="flex flex-row items-center gap-1.5 sm:gap-3 md:gap-5 py-2">
       {units.map((u, i) => (
         <>
           <CountdownUnit key={u.label} value={u.value} label={u.label} index={i} />

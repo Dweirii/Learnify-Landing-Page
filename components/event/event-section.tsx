@@ -144,7 +144,7 @@ function SectionHeading({ children }: { children: React.ReactNode }) {
 // ─── Inline divider ───────────────────────────────────────────────────────────
 function SectionDivider() {
   return (
-    <div className="flex items-center my-20">
+    <div className="flex items-center my-10 md:my-16 lg:my-20">
       <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-white/10" />
       <div className="mx-4 w-2 h-2 bg-[#0BA94C] rounded-full animate-pulse" />
       <div className="flex-1 h-px bg-gradient-to-l from-transparent via-white/20 to-white/10" />
@@ -231,7 +231,7 @@ export default function EventSection() {
   }
 
   return (
-    <section id="event" className="relative py-24 overflow-hidden" aria-labelledby="event-heading">
+    <section id="event" className="relative py-12 md:py-20 lg:py-24 overflow-hidden" aria-labelledby="event-heading">
       {/* Decorative background blobs */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-full pointer-events-none">
         <div className="absolute top-[5%] left-[5%] w-[40%] aspect-square bg-[#0BA94C]/5 rounded-full blur-[120px]" />
@@ -241,7 +241,7 @@ export default function EventSection() {
       <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* ─── ABOUT + COUNTDOWN side by side ────────────────────────────── */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-12 md:mb-20">
 
           {/* Left — text */}
           <motion.div
@@ -327,7 +327,7 @@ export default function EventSection() {
         <SectionDivider />
 
         {/* ─── FOR WHO ───────────────────────────────────────────────────── */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 md:mb-12">
           <SectionBadge>Who is this for</SectionBadge>
           <SectionHeading>
             Built for <span className="text-[#0BA94C]">everyone</span>
@@ -343,7 +343,7 @@ export default function EventSection() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-0">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 mb-0">
           {[
             {
               icon: Radio,
@@ -374,7 +374,7 @@ export default function EventSection() {
         <SectionDivider />
 
         {/* ─── WHAT YOU WILL GET ─────────────────────────────────────────── */}
-        <div className="text-center mb-12">
+        <div className="text-center mb-8 md:mb-12">
           <SectionBadge>Rewards & Benefits</SectionBadge>
           <SectionHeading>
             What you will <span className="text-[#0BA94C]">get</span>
@@ -390,7 +390,7 @@ export default function EventSection() {
           </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {[
             {
               icon: Gift,
@@ -431,7 +431,7 @@ export default function EventSection() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+                className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center"
               >
                 {/* Left */}
                 <div>
@@ -484,7 +484,7 @@ export default function EventSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -20 }}
-                className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start"
+                className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-start"
               >
                 {/* Left — copy */}
                 <motion.div
@@ -726,7 +726,7 @@ export default function EventSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="mt-20 flex justify-center"
+          className="mt-10 md:mt-20 flex justify-center"
         >
           <div className="flex items-center gap-4 px-6 py-3 rounded-2xl bg-white/[0.03] border border-white/10 backdrop-blur-md">
             <Zap className="w-5 h-5 text-[#0BA94C] animate-pulse" />
