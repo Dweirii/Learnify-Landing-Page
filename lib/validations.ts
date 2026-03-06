@@ -59,8 +59,23 @@ export const applicationStatusSchema = z.object({
   notes: z.string().max(1000, 'Notes must be less than 1000 characters').optional(),
 })
 
+// Beta Event Registration Validation
+export const eventRegistrationSchema = z
+  .object({
+    name: z.string().min(2, 'Name must be at least 2 characters').max(100, 'Name must be less than 100 characters'),
+    email: z.string().email('Invalid email address').max(100, 'Email must be less than 100 characters'),
+    phone: z.string().optional().refine((val) => !val || /^[\+]?[0-9\s\-\(\)]{7,25}$/.test(val), 'Invalid phone number'),
+    role: z.enum(['streamer', 'viewer']).default('viewer'),
+    streamerCategories: z.array(z.string()).optional().default([]),
+  })
+  .refine(
+    (data) => data.role !== 'streamer' || (data.streamerCategories && data.streamerCategories.length > 0),
+    { message: 'Streamers must select at least one category', path: ['streamerCategories'] }
+  )
+
 // Type exports
 export type JobApplicationInput = z.infer<typeof jobApplicationSchema>
+export type EventRegistrationInput = z.infer<typeof eventRegistrationSchema>
 export type ContactFormInput = z.infer<typeof contactFormSchema>
 export type NewsletterInput = z.infer<typeof newsletterSchema>
 export type JobInput = z.infer<typeof jobSchema>

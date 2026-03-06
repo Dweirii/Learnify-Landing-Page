@@ -55,7 +55,7 @@ export default function VisionSection({
           >
             {/* Header */}
             <div className="space-y-4">
-              <h2 id="vision-heading" className="text-3xl md:text-4xl font-bold text-white text-balance">
+              <h2 id="vision-heading" className="text-3xl md:text-4xl font-bold text-white tracking-tight">
                 {title}
               </h2>
               <p className="text-[#ABAEB6] text-lg text-pretty">{intro}</p>

@@ -208,7 +208,7 @@ export default function HowItWorksDiagram({ className }: { className?: string })
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl md:text-6xl font-black text-white mb-6 tracking-tight"
+            className="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight"
           >
             How it <span className="text-[#0BA94C]">works</span>
           </motion.h2>

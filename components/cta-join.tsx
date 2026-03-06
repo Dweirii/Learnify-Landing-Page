@@ -201,7 +201,7 @@ export default function CtaJoin({
     <section className={cn("bg-transparent", className)} id="join">
       <div className="max-w-screen-lg mx-auto px-4 sm:px-6 py-16">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
+          <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 tracking-tight">
             Start Your <span className="bg-gradient-to-r from-[#0BA94C] to-[#10B981] bg-clip-text text-transparent">Learnify</span> Journey Today
           </h2>
           <p className="text-lg md:text-xl text-[#ABAEB6] max-w-2xl mx-auto leading-relaxed">{subtitle}</p>

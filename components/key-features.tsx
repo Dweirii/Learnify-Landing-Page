@@ -203,7 +203,7 @@ export default function KeyFeatures({
           <Badge variant="outline" className="border-[#0BA94C]/50 text-[#0BA94C] bg-[#0BA94C]/10 mb-4">
             {subtitle}
           </Badge>
-          <h2 id="features-heading" className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 id="features-heading" className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-4">
             {title}
           </h2>
           <p className="text-[#ABAEB6] text-lg max-w-2xl mx-auto">

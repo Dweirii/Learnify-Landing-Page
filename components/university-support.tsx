@@ -5,7 +5,7 @@ export default function UniversitySupport() {
     <section aria-labelledby="support-heading" className="py-16 md:py-20 px-4 bg-transparent">
       <div className="container mx-auto max-w-5xl text-center">
         {/* Header */}
-        <h2 id="support-heading" className="text-3xl md:text-4xl font-bold text-white mb-4">
+        <h2 id="support-heading" className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-4">
           Supported by the <span className="text-[#0BA94C]">University of Jordan</span> & <span className="text-[#0BA94C]">UJIEC</span>
         </h2>
 

@@ -131,7 +131,7 @@ export default function OverviewSection({
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
           {/* Left Column: Overview Content */}
           <div className="space-y-6">
-            <h2 id="overview-heading" className="text-3xl md:text-4xl font-bold text-white leading-tight">
+            <h2 id="overview-heading" className="text-3xl md:text-4xl font-bold text-white tracking-tight">
               {title}
             </h2>
 

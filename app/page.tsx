@@ -1,5 +1,6 @@
 import Navbar from "@/components/navbar"
 import Hero from "@/components/hero"
+import EventSection from "@/components/event/event-section"
 import OverviewSection from "@/components/overview-section"
 import VisionSection from "@/components/vision-section"
 import KeyFeatures from "@/components/key-features"
@@ -16,6 +17,14 @@ export default function HomePage() {
     <div className="min-h-screen bg-gradient-to-br from-[#061A15] via-[#102D26] to-[#061A15] overflow-x-hidden">
       <Navbar />
       <Hero />
+      <div className="w-full px-4">
+        <div className="flex items-center justify-center max-w-7xl mx-auto">
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-white/10"></div>
+          <div className="mx-4 w-2 h-2 bg-[#0BA94C] rounded-full animate-pulse"></div>
+          <div className="flex-1 h-px bg-gradient-to-l from-transparent via-white/20 to-white/10"></div>
+        </div>
+      </div>
+      <EventSection />
       <div className="w-full px-4">
         <div className="flex items-center justify-center max-w-7xl mx-auto">
           <div className="flex-1 h-px bg-gradient-to-r from-transparent via-white/20 to-white/10"></div>

@@ -99,7 +99,7 @@ export default function TargetAudience({
           <motion.h2
             variants={itemVariants}
             id="target-audience-title"
-            className="text-3xl md:text-4xl font-bold text-white mb-4 text-balance"
+            className="text-3xl md:text-4xl font-bold text-white tracking-tight mb-4"
           >
             {title}
           </motion.h2>

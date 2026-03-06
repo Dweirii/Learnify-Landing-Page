@@ -131,3 +131,22 @@ enum UserType {
   USER
   STREAMER
 }
+
+model EventRegistration {
+  id                 String   @id @default(cuid())
+  name               String
+  email              String
+  phone              String?
+  role               EventRole @default(VIEWER)
+  streamerCategories String[] // Technology and Coding, Creativity and Arts, Innovation, Others / Study with Me
+  source             String   @default("Beta Event Launch")
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  @@map("event_registrations")
+}
+
+enum EventRole {
+  STREAMER
+  VIEWER
+}
