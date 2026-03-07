@@ -1,5 +1,6 @@
 import { Twitter, Linkedin, Youtube, Instagram } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 import NewsletterSubscription from "./newsletter-subscription"
 
 export default function Footer() {
@@ -96,6 +97,20 @@ export default function Footer() {
             <div className="flex flex-col gap-1">
               <span>© {currentYear} Learnify Technologies, Inc.</span>
               <span className="text-xs opacity-70">A Delaware C-Corporation.</span>
+              <div className="flex flex-wrap gap-x-4 gap-y-1 mt-2">
+                <Link
+                  href="/privacy-policy"
+                  className="text-white/70 hover:text-[#0BA94C] transition-colors focus:outline-none focus:ring-2 focus:ring-[#0BA94C] focus:ring-offset-2 focus:ring-offset-[#061A15] rounded"
+                >
+                  Privacy Policy
+                </Link>
+                <Link
+                  href="/terms-service"
+                  className="text-white/70 hover:text-[#0BA94C] transition-colors focus:outline-none focus:ring-2 focus:ring-[#0BA94C] focus:ring-offset-2 focus:ring-offset-[#061A15] rounded"
+                >
+                  Terms of Service
+                </Link>
+              </div>
             </div>
 
             <span className="text-white/60">
