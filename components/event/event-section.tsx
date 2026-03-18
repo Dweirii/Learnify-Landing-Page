@@ -282,16 +282,37 @@ export default function EventSection() {
               className="text-[#ABAEB6] text-lg leading-relaxed mb-6"
             >
               Join us on{" "}
-              <span className="text-white font-semibold">March 26</span> to be among the first to experience the
+              <span className="text-white font-semibold">March 26, 11:30 AM &ndash; 3:00 PM</span> at{" "}
+              <span className="text-white font-semibold">University of Jordan Academy</span> to be among the first to experience the
               platform, host live streams, join the communities, rank up on the leaderboard, and win valuable prizes from
               the Learnify team.
             </motion.p>
+
+            {/* Event details */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.25 }}
+              className="flex flex-wrap gap-3 mb-6"
+            >
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-red-500/10 border border-red-500/20 text-red-400 text-sm font-medium">
+                <span className="w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse" />
+                80% of spots reserved
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0BA94C]/10 border border-[#0BA94C]/20 text-[#0BA94C] text-sm font-medium">
+                Invitation only — tickets will be sent
+              </span>
+              <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0BA94C]/10 border border-[#0BA94C]/20 text-[#0BA94C] text-sm font-medium">
+                Complimentary access
+              </span>
+            </motion.div>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.25 }}
+              transition={{ delay: 0.3 }}
               className="text-white font-bold text-xl"
             >
               Seats are limited. Reserve yours now!

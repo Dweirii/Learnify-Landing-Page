@@ -54,26 +54,11 @@ const imageVariants: Variants = {
 
 export default function Hero({
   overview,
-  ctaHref = "#join",
+  ctaHref = "#event",
   secondaryHref = "/features",
   images,
   className = "bg-transparent",
 }: HeroProps) {
-  const defaultOverview = (
-    <div className="space-y-4">
-      <p>
-        Learnify is an interactive live-streaming educational platform designed to bridge the gap between academic learning and real job-market skills in the Arab world.
-      </p>
-      <p>
-        It delivers a modern learning experience built on real-time interaction, practical knowledge, and a strong learning community.
-      </p>
-      <p>
-        Learnify enables talented students and industry experts to host live sessions across different fields, creating meaningful engagement between instructors and learners — aligned with today’s digital learning preferences.
-      </p>
-    </div>
-  )
-
-  const displayOverview = overview || defaultOverview
   return (
     <section
       aria-labelledby="hero-heading"
@@ -89,40 +74,54 @@ export default function Hero({
             animate="visible"
             className="text-center lg:text-left"
           >
+            <motion.div
+              variants={itemVariants}
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-bold uppercase tracking-widest mb-4"
+            >
+              <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
+              80% of spots reserved
+            </motion.div>
+
             <motion.h1
               variants={itemVariants}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-2 text-balance"
             >
-              Why Learnify
+              Learnify Beta{" "}
+              <span className="text-[#0BA94C]">Launch Event</span>
             </motion.h1>
 
             <motion.p
               variants={itemVariants}
               className="text-lg md:text-xl font-semibold text-[#0BA94C] mb-6"
             >
-              Built by Learners, for the Future of Skills
+              March 26 &middot; 11:30 AM &ndash; 3:00 PM &middot; University of Jordan Academy
             </motion.p>
 
             <motion.div
               variants={itemVariants}
               className="text-base lg:text-lg text-[#ABAEB6] leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0 text-pretty"
             >
-              {displayOverview}
+              <p>
+                Be among the first to experience Learnify live. An exclusive, invitation-only event where we unveil the platform, host live streams, and reward early supporters with prizes and certificates.
+              </p>
+              <p className="mt-3 text-white font-medium">
+                Spots are limited and filling fast. Register now and we&apos;ll send your personal ticket.
+              </p>
             </motion.div>
 
             {/* Feature bullets */}
-            <motion.div variants={itemVariants} className="flex flex-wrap justify-center lg:justify-start gap-4 mb-8">
+            <motion.div variants={itemVariants} className="flex flex-wrap justify-center lg:justify-start gap-3 mb-8">
               <Badge variant="secondary" className="bg-[#102D26]/60 text-[#ABAEB6] border-[#ABAEB6]/20">
                 <Users className="w-3 h-3 mr-1" />
-                Live Learning
+                Invitation Only
               </Badge>
               <Badge variant="secondary" className="bg-[#102D26]/60 text-[#ABAEB6] border-[#ABAEB6]/20">
                 <Trophy className="w-3 h-3 mr-1" />
-                Project-Based
+                Prizes & Certificates
               </Badge>
               <Badge variant="secondary" className="bg-[#102D26]/60 text-[#ABAEB6] border-[#ABAEB6]/20">
                 <Zap className="w-3 h-3 mr-1" />
-                Gamification
+                Complimentary Access
               </Badge>
             </motion.div>
 
@@ -136,7 +135,7 @@ export default function Hero({
                 size="lg"
                 className="bg-[#0BA94C] hover:bg-[#0BA94C]/90 text-white font-semibold px-8 py-3 h-auto focus:ring-2 focus:ring-[#0BA94C]/50 focus:ring-offset-2 focus:ring-offset-[#061A15]"
               >
-                <Link href={ctaHref}>Join Learnify</Link>
+                <Link href={ctaHref}>Register for Event</Link>
               </Button>
               <Button
                 asChild
@@ -149,7 +148,7 @@ export default function Hero({
             </motion.div>
 
             <motion.p variants={itemVariants} className="text-sm text-[#B3B3B3] italic">
-              Built by Learners, for the Future of Skills
+              Register now and receive your personal ticket via email
             </motion.p>
 
             {/* Stats row */}
@@ -157,11 +156,11 @@ export default function Hero({
               variants={itemVariants}
               className="flex flex-wrap justify-center lg:justify-start gap-6 mt-8 text-sm text-[#ABAEB6]"
             >
-              <span>10+ sessions</span>
+              <span>March 26</span>
               <span className="opacity-50">•</span>
-              <span>5+ projects</span>
+              <span>11:30 AM &ndash; 3:00 PM</span>
               <span className="opacity-50">•</span>
-              <span>95% satisfaction</span>
+              <span>UJ Academy</span>
             </motion.div>
           </motion.div>
 
