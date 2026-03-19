@@ -3,7 +3,6 @@ import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 import { Analytics } from '@vercel/analytics/next'
 import { Toaster } from '@/components/ui/toaster'
-import Script from "next/script"
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -50,13 +49,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head>
-        <Script
-          src="https://genie-ai-genesis-hackthon-widget.vercel.app/widget.js"
-          data-organization-id="org_35UIvA8d8LGBnfSLUvOazVwTDnG"
-          strategy="afterInteractive"
-        />
-      </head>
       <body className={`font-sans ${GeistSans.variable} ${GeistMono.variable}`}>
         {children}
         <Toaster />
