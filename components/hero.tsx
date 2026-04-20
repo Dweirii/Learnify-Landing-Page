@@ -5,24 +5,14 @@ import Image from "next/image"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import { Users, Trophy, Zap } from "lucide-react"
-
-interface HeroProps {
-  tagline?: string
-  overview?: string
-  ctaHref?: string
-  secondaryHref?: string
-  images?: { main: string; card1: string; card2: string }
-  className?: string
-}
-
+import { Radio, Users, Sparkles } from "lucide-react"
 
 const containerVariants: Variants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.2,
+      staggerChildren: 0.18,
       delayChildren: 0.1,
     },
   },
@@ -33,10 +23,7 @@ const itemVariants: Variants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      duration: 0.6,
-      ease: "easeOut",
-    },
+    transition: { duration: 0.6, ease: "easeOut" },
   },
 }
 
@@ -45,29 +32,19 @@ const imageVariants: Variants = {
   visible: {
     opacity: 1,
     scale: 1,
-    transition: {
-      duration: 0.8,
-      ease: "easeOut",
-    },
+    transition: { duration: 0.8, ease: "easeOut" },
   },
 }
 
-export default function Hero({
-  overview,
-  ctaHref = "#event",
-  secondaryHref = "/features",
-  images,
-  className = "bg-transparent",
-}: HeroProps) {
+export default function Hero() {
   return (
     <section
       aria-labelledby="hero-heading"
-      className={`relative w-full overflow-hidden ${className}`}
+      className="relative w-full overflow-hidden bg-transparent"
     >
-
       <div className="relative max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          {/* Left Column - Content */}
+          {/* Left — Content */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -76,52 +53,44 @@ export default function Hero({
           >
             <motion.div
               variants={itemVariants}
-              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-red-500/10 border border-red-500/30 text-red-400 text-xs font-bold uppercase tracking-widest mb-4"
+              className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#0BA94C]/10 border border-[#0BA94C]/40 text-[#0BA94C] text-xs font-bold uppercase tracking-widest mb-4"
             >
-              <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
-              80% of spots reserved
+              <div className="w-2 h-2 bg-[#0BA94C] rounded-full animate-pulse" />
+              Cohorts start May 8 · UoJ
             </motion.div>
 
             <motion.h1
+              id="hero-heading"
               variants={itemVariants}
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-2 text-balance"
+              className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.05] mb-5 text-balance"
             >
-              Learnify Beta{" "}
-              <span className="text-[#0BA94C]">Launch Event</span>
+              Learn by <span className="text-[#0BA94C]">doing.</span>
+              <br />
+              Live. <span className="text-[#0BA94C]">Together.</span>
             </motion.h1>
-
-            <motion.p
-              variants={itemVariants}
-              className="text-lg md:text-xl font-semibold text-[#0BA94C] mb-6"
-            >
-              March 26 &middot; 11:30 AM &ndash; 3:00 PM &middot; University of Jordan Academy
-            </motion.p>
 
             <motion.div
               variants={itemVariants}
               className="text-base lg:text-lg text-[#ABAEB6] leading-relaxed mb-8 max-w-2xl mx-auto lg:mx-0 text-pretty"
             >
               <p>
-                Be among the first to experience Learnify live. An exclusive, invitation-only event where we unveil the platform, host live streams, and reward early supporters with prizes and certificates.
-              </p>
-              <p className="mt-3 text-white font-medium">
-                Spots are limited and filling fast. Register now and we&apos;ll send your personal ticket.
+                Learnify is where you learn a real skill by watching someone actually build something, live — and then build it alongside them. Free project-based cohorts, community that sticks, and creators who ship with you.
               </p>
             </motion.div>
 
             {/* Feature bullets */}
             <motion.div variants={itemVariants} className="flex flex-wrap justify-center lg:justify-start gap-3 mb-8">
               <Badge variant="secondary" className="bg-[#102D26]/60 text-[#ABAEB6] border-[#ABAEB6]/20">
+                <Radio className="w-3 h-3 mr-1" />
+                Live cohorts
+              </Badge>
+              <Badge variant="secondary" className="bg-[#102D26]/60 text-[#ABAEB6] border-[#ABAEB6]/20">
                 <Users className="w-3 h-3 mr-1" />
-                Invitation Only
+                Real community
               </Badge>
               <Badge variant="secondary" className="bg-[#102D26]/60 text-[#ABAEB6] border-[#ABAEB6]/20">
-                <Trophy className="w-3 h-3 mr-1" />
-                Prizes & Certificates
-              </Badge>
-              <Badge variant="secondary" className="bg-[#102D26]/60 text-[#ABAEB6] border-[#ABAEB6]/20">
-                <Zap className="w-3 h-3 mr-1" />
-                Complimentary Access
+                <Sparkles className="w-3 h-3 mr-1" />
+                Free to join
               </Badge>
             </motion.div>
 
@@ -135,7 +104,7 @@ export default function Hero({
                 size="lg"
                 className="bg-[#0BA94C] hover:bg-[#0BA94C]/90 text-white font-semibold px-8 py-3 h-auto focus:ring-2 focus:ring-[#0BA94C]/50 focus:ring-offset-2 focus:ring-offset-[#061A15]"
               >
-                <Link href={ctaHref}>Register for Event</Link>
+                <Link href="/cohort">Join a cohort</Link>
               </Button>
               <Button
                 asChild
@@ -143,12 +112,12 @@ export default function Hero({
                 size="lg"
                 className="border-[#ABAEB6]/40 text-[#ABAEB6] hover:bg-[#ABAEB6]/10 hover:text-white px-8 py-3 h-auto focus:ring-2 focus:ring-[#ABAEB6]/50 focus:ring-offset-2 focus:ring-offset-[#061A15] bg-transparent"
               >
-                <Link href={secondaryHref}>See Features</Link>
+                <Link href="/cohort">Become a Founding Creator</Link>
               </Button>
             </motion.div>
 
             <motion.p variants={itemVariants} className="text-sm text-[#B3B3B3] italic">
-              Register now and receive your personal ticket via email
+              Free to join. $5/mo paid directly to your creator unlocks their community, replays and Demo Day.
             </motion.p>
 
             {/* Stats row */}
@@ -156,15 +125,15 @@ export default function Hero({
               variants={itemVariants}
               className="flex flex-wrap justify-center lg:justify-start gap-6 mt-8 text-sm text-[#ABAEB6]"
             >
-              <span>March 26</span>
+              <span>Arabic-first</span>
               <span className="opacity-50">•</span>
-              <span>11:30 AM &ndash; 3:00 PM</span>
+              <span>Project-based</span>
               <span className="opacity-50">•</span>
-              <span>UJ Academy</span>
+              <span>MENA before the world</span>
             </motion.div>
           </motion.div>
 
-          {/* Right Column - Image Composition */}
+          {/* Right — Image Composition */}
           <motion.div variants={imageVariants} initial="hidden" animate="visible" className="relative lg:block">
             <div className="relative max-w-lg mx-auto lg:max-w-none">
               {/* Main mockup card */}

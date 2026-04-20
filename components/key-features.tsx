@@ -41,44 +41,44 @@ interface KeyFeaturesProps {
 
 const defaultFeatures: Feature[] = [
   {
-    title: "Live Learning Sessions",
-    description: "Real-time classes with chat, Q&A, and polls.",
+    title: "Live Project Cohorts",
+    description: "4-week cohorts where you build real projects live, with a creator and a group.",
     icon: Broadcast,
   },
   {
-    title: "AI-Powered Learning Agent",
-    description: "Personalized guidance, recap, and next-best action.",
-    icon: Sparkles,
-  },
-  {
-    title: "Skill Building Tracks",
-    description: "Curated pathways aligned to market roles.",
-    icon: Route,
-  },
-  {
-    title: "Project-Based Tracks",
-    description: "Build portfolio-ready projects with reviews.",
+    title: "Ship What You Learn",
+    description: "Every cohort ends with Demo Day — present a working project, not just a certificate.",
     icon: Hammer,
   },
   {
-    title: "Gamified Learning System",
-    description: "XP, levels, streaks, badges.",
-    icon: Trophy,
-  },
-  {
-    title: "Community-Based Learning",
-    description: "Peer rooms, study circles, mentor AMAs.",
+    title: "Cohort Communities That Stick",
+    description: "Each cohort has its own group — pinned progress, check-ins, and teammates who ship with you.",
     icon: Users,
   },
   {
-    title: "Community Management Tools",
-    description: "Moderation, analytics, and roles for creators.",
-    icon: ShieldCheck,
+    title: "$5/mo Direct to Your Creator",
+    description: "Subscribe to unlock their community, replays, Demo Day, and certificate. Paid to them — not a platform fee.",
+    icon: Coins,
   },
   {
-    title: "Freemium Model",
-    description: "Start free; unlock pro features when ready.",
-    icon: Coins,
+    title: "AI Learning Agent",
+    description: "Session recaps, practice prompts, and next-best-action tailored to your cohort progress.",
+    icon: Sparkles,
+  },
+  {
+    title: "Skill Tracks & Paths",
+    description: "Cohorts sequence into real skill paths aligned to market roles.",
+    icon: Route,
+  },
+  {
+    title: "XP, Streaks, and Badges",
+    description: "Gamification that rewards showing up, shipping, and helping teammates.",
+    icon: Trophy,
+  },
+  {
+    title: "Creator Tools Built-In",
+    description: "Moderation, analytics, polls, quizzes, and sub management — so creators focus on teaching.",
+    icon: ShieldCheck,
   },
 ]
 

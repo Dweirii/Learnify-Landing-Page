@@ -91,8 +91,8 @@ function StatCard({ value, title, description, icon }: StatCardProps) {
 }
 
 export default function OverviewSection({
-  title = "New Learning Preference",
-  copy = "Learnify revolutionizes education in the Arab world by combining live-streaming technology with interactive learning experiences. Our platform connects passionate educators with eager learners through real-time engagement, practical skill development, and community-driven knowledge sharing.\n\nUnlike traditional e-learning platforms that rely on pre-recorded content, Learnify emphasizes live interaction, immediate feedback, and collaborative learning environments. This approach addresses the growing demand for dynamic, engaging educational experiences that prepare students for today's competitive job market.",
+  title = "Learning happens live.",
+  copy = "Pre-recorded courses taught a generation of learners how to watch. They didn't teach them how to build. Learnify is the opposite bet — every cohort is live, every learner builds a real project, and every creator ships alongside the community they're teaching.\n\nThis is what we mean by project-based: you don't finish a cohort with a certificate and a forgotten Udemy tab. You finish with a working app, a validated startup idea, or a complete brand system — built live, with people you learned with, in Arabic.",
   stats = [
     {
       value: "77%",
@@ -149,7 +149,7 @@ export default function OverviewSection({
 
           {/* Right Column: Problem Stats */}
           <div className="space-y-6">
-            <h3 className="text-xl font-semibold text-white">The <span className="text-[#0BA94C]">Learning Gap</span> Challenge</h3>
+            <h3 className="text-xl font-semibold text-white">Why <span className="text-[#0BA94C]">live cohorts</span> — not another course platform</h3>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4" role="list">
               {stats.map((stat, index) => (

@@ -17,21 +17,21 @@ interface VisionSectionProps {
 }
 
 const defaultBeliefs = [
-  "We believe in learning by doing.",
-  "We believe education is a movement.",
-  "We believe every learner can be a leader.",
-  "We believe in bridging the gap.",
-  "We believe the future of MENA lies in its youth.",
-  "We believe everyone has something to teach.",
+  "You learn by building — not by watching.",
+  "Live beats recorded. Together beats alone.",
+  "Every learner is a future leader. Every leader was once a learner.",
+  "The Arab world needs builders. We're training the next wave.",
+  "A community that ships is worth more than a course that sits.",
+  "Every creator is a teacher. Every teacher ships real work.",
 ]
 
 export default function VisionSection({
-  title = "Short Vision",
-  intro = "Starting from our vision, Learnify started.",
+  title = "What we believe.",
+  intro = "Six ideas that shaped Learnify — and still do.",
   beliefs = defaultBeliefs,
-  closing = "Join the movement now!",
-  ctaLabel = "Get Started",
-  ctaHref = "#join",
+  closing = "Join the movement. Start with a cohort.",
+  ctaLabel = "Join a cohort",
+  ctaHref = "#cohorts",
   image,
   className = "",
 }: VisionSectionProps) {

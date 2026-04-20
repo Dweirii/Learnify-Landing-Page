@@ -33,14 +33,14 @@ interface NavbarProps {
 
 const defaultItems: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "Beta Event", href: "/#event" },
+  { label: "Cohorts", href: "/#cohorts" },
   { label: "Features", href: "/features" },
   { label: "Pricing", href: "/pricing" },
   { label: "FAQ", href: "/faq" },
   { label: "About us", href: "/about" },
 ]
 
-export default function Navbar({ items = defaultItems, ctaHref = "/#event", className }: NavbarProps) {
+export default function Navbar({ items = defaultItems, ctaHref = "/#cohorts", className }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isOpen, setIsOpen] = useState(false)
   const pathname = usePathname()
