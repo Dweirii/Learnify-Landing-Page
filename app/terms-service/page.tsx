@@ -153,7 +153,105 @@ export default function TermsOfServicePage() {
       <h2>18) Changes to These Terms</h2>
       <p>We may update these Terms from time to time to reflect changes in our streaming features, community rules, or legal requirements. We will update the Last Updated date above. If changes are material, we may provide notice through the Services or via email. Your continued use of the Services after changes become effective constitutes your binding acceptance of the updated Terms.</p>
 
-      <h2>19) Contact</h2>
+      <h2>19) Apple App Store Specific Terms</h2>
+      <p>
+        The following supplemental terms apply only to your use of the Services
+        through an Apple-branded application downloaded from the Apple App Store
+        (the &quot;Licensed Application&quot;). These terms are required by Apple Inc.
+        (&quot;Apple&quot;) and apply in addition to all other terms above. In the event
+        of any conflict between this section and the rest of these Terms with
+        respect to the Licensed Application, this section controls.
+      </p>
+      <h3>A) Acknowledgment</h3>
+      <p>
+        You acknowledge that these Terms are concluded between you and Learnify
+        Technologies, Inc. only, and not with Apple. Learnify, not Apple, is
+        solely responsible for the Licensed Application and its content.
+      </p>
+      <h3>B) Scope of License</h3>
+      <p>
+        Learnify grants you a non-transferable license to use the Licensed
+        Application on any Apple-branded products that you own or control, and
+        as permitted by the Usage Rules set forth in the Apple Media Services
+        Terms and Conditions, except that the Licensed Application may be
+        accessed and used by other accounts associated with you via Family
+        Sharing or volume purchasing.
+      </p>
+      <h3>C) Maintenance and Support</h3>
+      <p>
+        Learnify is solely responsible for providing any maintenance and
+        support services with respect to the Licensed Application, as specified
+        in these Terms or as required under applicable law. You acknowledge
+        that Apple has no obligation whatsoever to furnish any maintenance and
+        support services with respect to the Licensed Application.
+      </p>
+      <h3>D) Warranty</h3>
+      <p>
+        Learnify is solely responsible for any product warranties, whether
+        express or implied by law, to the extent not effectively disclaimed. In
+        the event of any failure of the Licensed Application to conform to any
+        applicable warranty, you may notify Apple, and Apple will refund the
+        purchase price for the Licensed Application to you. To the maximum
+        extent permitted by applicable law, Apple will have no other warranty
+        obligation whatsoever with respect to the Licensed Application, and any
+        other claims, losses, liabilities, damages, costs, or expenses
+        attributable to any failure to conform to any warranty will be Learnify&apos;s
+        sole responsibility.
+      </p>
+      <h3>E) Product Claims</h3>
+      <p>
+        You and Learnify acknowledge that Learnify, not Apple, is responsible
+        for addressing any claims by you or any third party relating to the
+        Licensed Application or your possession and/or use of it, including but
+        not limited to: (i) product liability claims; (ii) any claim that the
+        Licensed Application fails to conform to any applicable legal or
+        regulatory requirement; and (iii) claims arising under consumer
+        protection, privacy, or similar legislation.
+      </p>
+      <h3>F) Intellectual Property Rights</h3>
+      <p>
+        You and Learnify acknowledge that, in the event of any third-party
+        claim that the Licensed Application or your possession and use of it
+        infringes that third party&apos;s intellectual property rights, Learnify,
+        not Apple, will be solely responsible for the investigation, defense,
+        settlement, and discharge of any such intellectual property infringement
+        claim.
+      </p>
+      <h3>G) Legal Compliance</h3>
+      <p>
+        You represent and warrant that (i) you are not located in a country
+        that is subject to a U.S. Government embargo, or that has been
+        designated by the U.S. Government as a &quot;terrorist supporting&quot; country;
+        and (ii) you are not listed on any U.S. Government list of prohibited
+        or restricted parties.
+      </p>
+      <h3>H) Developer Contact Information</h3>
+      <p>
+        Direct any questions, complaints, or claims regarding the Licensed
+        Application to:
+      </p>
+      <p>
+        Learnify Technologies, Inc.<br />
+        131 Continental Dr, Suite 305<br />
+        Newark, Delaware, 19713, United States<br />
+        Email: <a href="mailto:zaid@learnifyjo.com">zaid@learnifyjo.com</a>
+      </p>
+      <h3>I) Third-Party Terms of Agreement</h3>
+      <p>
+        You must comply with applicable third-party terms of agreement when
+        using the Licensed Application.
+      </p>
+      <h3>J) Third-Party Beneficiary</h3>
+      <p>
+        You and Learnify acknowledge and agree that Apple, and Apple&apos;s
+        subsidiaries, are third-party beneficiaries of these Terms with respect
+        to the Licensed Application, and that, upon your acceptance of these
+        Terms, Apple will have the right (and will be deemed to have accepted
+        the right) to enforce these Terms against you as a third-party
+        beneficiary thereof with respect to the Licensed Application.
+      </p>
+
+      <h2>20) Contact</h2>
       <p>Questions about these Terms? Contact us at:</p>
       <p>
         Learnify Technologies, Inc.<br />
